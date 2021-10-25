@@ -1,1 +1,201 @@
-<p>login works!</p>
+<html class=" js no-mobile desktop no-ie chrome chrome94 cas-section gradient rgba opacity textshadow multiplebgs boxshadow borderimage borderradius cssreflections csstransforms csstransitions no-touch no-retina fontface domloaded w-354 gt-240 gt-320 lt-480 lt-640 lt-768 lt-800 lt-1024 lt-1280 lt-1440 lt-1680 lt-1920 portrait no-landscape" id="login-page"><head>
+    <title>Login - CAS – Central Authentication Service</title>
+    <meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="stylesheet" type="text/css" href="/cas/webjars/font-awesome/5.11.2/css/all.min.css"><link rel="stylesheet" type="text/css" href="/cas/webjars/bootstrap/4.3.1/css/bootstrap.min.css"><link rel="stylesheet" type="text/css" href="/cas/css/cas.css"><link rel="icon" href="/cas/favicon.ico" type="image/x-icon"><script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/YhkYx1k-yvvb8OonJPmOpoJY/recaptcha__pt_pt.js" crossorigin="anonymous" integrity="sha384-1pbisacD8vGB7uvp3Try0Vi1zFdUbeQoHWFuuamNoiX6q3T6uFYWbqF4kqpxLazJ"></script><script type="text/javascript" src="/cas/webjars/jquery/3.4.1/jquery.min.js"></script>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></head>
+
+<body class="login">
+<script type="text/javascript" src="/cas/webjars/jquery-ui/1.12.1/jquery-ui.min.js"></script>
+<script src="//www.google.com/recaptcha/api.js" async="" defer=""></script>
+<script type="text/javascript" src="/cas/webjars/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+<script type="text/javascript" src="/cas/webjars/headjs/1.0.3/head.min.js"></script>
+<script type="text/javascript" src="/cas/js/cas.js"></script>
+
+<script>
+    head.ready(document, function () {
+        if (!window.jQuery) {
+            var jqueryUrl = "\/cas\/webjars\/jquery\/3.4.1\/jquery.min.js";
+            head.load(jqueryUrl, loadjQueryUI);
+        } else {
+            notifyResourcesAreLoaded(resourceLoadedSuccessfully);
+        }
+    });
+
+    function loadjQueryUI() {
+        var jqueryUrl = "\/cas\/webjars\/jquery-ui\/1.12.1\/jquery-ui.min.js";
+        head.load(jqueryUrl, notifyResourcesAreLoaded(resourceLoadedSuccessfully));
+    }
+
+    function notifyResourcesAreLoaded(callback) {
+        if (typeof callback === "function") {
+            callback();
+        }
+    }
+</script>
+
+<script>
+    /*<![CDATA[*/
+
+    var trackGeoLocation = false;
+
+    var googleAnalyticsTrackingId = null;
+
+    if (googleAnalyticsTrackingId != null && googleAnalyticsTrackingId != '') {
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', googleAnalyticsTrackingId, 'auto');
+        ga('send', 'pageview');
+    }
+
+    /*]]>*/
+</script>
+
+<header role="banner">
+<!--         <nav class="navbar navbar-expand-md fixed-top"> --><!--             <a class="navbar-brand" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 336.82 167.83" class="logo"><defs><style>.cls-1{fill:#024d71;}.cls-2{fill:#74c163;}</style></defs><title>cas_logo</title><g id="Layer_2" data-name="Layer 2"><path class="cls-1" d="M217.72,469.85c-17.68,1.31-38.31,1-54.18-7.87-12.59-7-23.71-18.52-28.72-32.14a82,82,0,0,1-4.49-27.49c0-36.26,16.11-64.23,40.29-80.34,16.59-11.38,36-16.83,58.54-16.83,17.3,0,30.34,4,35.08,6.64l-9.48,27.73c-4.5-2.38-15.17-5.22-28.92-5.22s-26.78,4.27-36.5,12.33c-13.27,11.13-22,29.39-22,51.66,0,25.6,14.46,42.67,42.43,42.67a161.48,161.48,0,0,0,22.38-1.19Z" transform="translate(-130.33 -305.18)"/><path class="cls-1" d="M322.77,398.75l-2.72-30.4c-.71-8.76-1.42-21.56-2.14-31.28h-.71c-4,9.72-8.53,22-12.8,31.28l-13.69,30.08-13.53,33.43-17.33,38.41h-36.5l78-159.75h43.85l18.49,159.75H327.87l-3.05-38.12Z" transform="translate(-130.33 -305.18)"/><path class="cls-1" d="M364.31,438.85c12.27,3.81,21.29,5.19,36.22,5.19,13,0,20.87-6.71,20.87-19,0-9.24-6.87-14.93-21.57-22.75-16.82-9-32.94-21.8-32.94-42.42,0-32.24,28-51.91,62.81-51.91,19.19,0,30.57,4.27,37.44,7.82l-10.66,28.44a62.94,62.94,0,0,0-29.63-6.87c-15.88,0-24.17,7.82-24.17,16.59,0,9.48,9.72,15.17,23.23,22.75,19.43,10.19,31.52,23.23,31.52,42.43,0,35.55-29.44,55.72-64.71,53.8a231.52,231.52,0,0,1-24.78-2.61Z" transform="translate(-130.33 -305.18)"/></g><g id="swoosh"><path class="cls-2" d="M257.45,432.24a41.64,41.64,0,0,1,13.11-.32,39.17,39.17,0,0,1,16.89,6.2l0,0c10.55-15,29.11-25,50.24-25,19.75,0,37.34,8.85,48.16,22.28l1-.77c-12.85-17.31-37.44-29-65.67-29-26.92,0-50.54,10.65-63.81,26.65Z" transform="translate(-130.33 -305.18)"/></g></svg></a> --><!--         </nav> --></header>
+
+<main role="main" class="container mt-3 mb-3">
+    <div id="content" class="row login">
+        <div class="col-md">
+            <div class="card">
+            	<script type="text/javascript" src="/cas/js/jquery.mask.min.js"></script>
+                <div class="card-header text-center">
+                    <img alt="Logo UFG" src="/cas/images/ufg_logo.png" style="width: 278px; margin-bottom: 32px;"><h4 style="font-weight: 300;font-size: 22px;line-height: 26px;text-align: center;color: #7D7D7D;">Autenticação UFG</h4>
+                </div>
+                <div class="card-body">
+                    <form method="post" id="fm1" action="login">
+                        <!--                         <h3 th:utext="#{screen.welcome.instructions}">Enter your Username and Password</h3> --><section class="form-group">
+                            </section>
+
+                        <section class="form-group">
+                            <!-- <label for="username" th:utext="#{screen.welcome.label.netid}">Username</label> --><div>
+                            	<div class="input-group">
+                            		<div class="input-group-prepend">
+                            			<span class="input-group-text">
+											<i class="far fa-user"></i>
+										</span>
+									</div>
+	                                <input class="form-control required" id="username" size="25" tabindex="1" type="text" placeholder="Informe seu login" accesskey="u" autocomplete="off" name="username" value=""></div>
+                            </div>
+                        </section>
+
+                        <section class="form-group">
+                            <!-- <label for="password" th:utext="#{screen.welcome.label.password}">Password</label> --><div>
+                            	<div class="input-group">
+                            		<div class="input-group-prepend">
+                            			<span class="input-group-text">
+											<i class="fa fa-lock"></i>
+										</span>
+									</div>
+                            
+	                                <input class="form-control required" type="password" id="password" size="25" tabindex="2" accesskey="s" placeholder="Senha" autocomplete="off" name="password" value=""></div>
+                                
+                                <span id="capslock-on" style="display:none;">
+	                                <p style="color: #9b0000;">
+	                                    <i class="fa fa-exclamation-circle"></i>
+	                                    <span>A tecla Caps Lock está ativada!</span>
+	                                </p>
+                            	</span>
+                            </div>
+                        </section>
+                        
+                       	<section class="form-group form-check" style="text-align: right; margin-bottom: 0.3rem; margin-top: 0.3rem;">
+					    	<input type="checkbox" class="form-check-input" id="checkbox_login"><label class="form-check-label" for="checkbox_login">Login pelo CPF</label>
+					  	</section>
+
+                        <section class="form-group">
+                                <div class="g-recaptcha" data-sitekey="6Lcn93waAAAAAGEElpSzoui_EgNQmB8q80qAATV7"><div style="width: 304px; height: 78px;"><div><iframe title="reCAPTCHA" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6Lcn93waAAAAAGEElpSzoui_EgNQmB8q80qAATV7&amp;co=aHR0cHM6Ly9zc28udWZnLmJyOjQ0Mw..&amp;hl=pt-PT&amp;v=YhkYx1k-yvvb8OonJPmOpoJY&amp;size=normal&amp;cb=hsjmj4suh72t" width="304" height="78" role="presentation" name="a-mm193ndoa3m9" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div></section>
+                        <input type="hidden" name="execution" value="02f055c3-b0ee-451c-87cc-34e6b389e1a7_ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LnpwN3J0QnJlQXEzTFBrWXdWN0UtNGI1a3Rsd1lxV21rS3kwQmNWNi1PaEh0bWJsdldGNGk5enBDd3BUeGZTQTAxZ3JETjB3S200QkFZQVktTDVkeUNXcDFZalUyQlJwQ2g1Y0VuZXBYd1o4OTVYZzJWcm9ySVFTZzEyQ19WUm9TNkdaOTlqeFJXbUg5aDEwNzZzcjl5dFRNeExGZS1GeC1lX0hFS1dhRWMtN3lnUUNsS2g1RUpUNGhRaUJ1aEVMR2VpSE9LalpnZWFocVpPZkFSdlNtSFkyTl93eXZweGF5M2tSaGpMUjdBUXcxejE4QlRiRmc3VmZnb2xsWG1WSkZMV2s4dGpBWDhIRkx3VE9XMFFhT0RHY2t3dHVNWGZ3N0RzMDNSZVlOUmlGZ050R2NNMF9IdTZsLUQ3M0d5YldLeGRYR2F2WWlKR1QtNWlqN3VTSHVlbW43RUhsVmNwUWZfZEF4TXkxZzg4Nk9SaUFKS1pMUlNQdzFhWHctYUctUzhkZWpacU1TbUV5U2dfUmZPMzBkVzN3SG9SdXdsZnZzUmJJVTVVWHZlUkNvWGxieVo0ZHVEbzFOeXJ4cjdubFNUR0FZMTFsZkE0d3RkZmNVZHVfVzNMUkVRVVh1YlBIenhZRFJpckN5UFJWN0Q4ekNjNndxd0NjNk1qR0p2NWxsN3Y5bkMwdHVrYThqdWlEVFJhNjlPNXVXSHNyREtkdGhxZTV4azBfVFRMWkhpaGROaDB2Ui1YTk1sUFdEOXNzalpFWE5pMWdxc0d4Mjd5SjZ1clF6NURsUVVhSXRrQ2xMZnFVXzVScWx1SE0ydnA0cGlCSXF3YkxFdjlCdWpyczk2cTZyb3NZRTBnakhMdklZbUlfdUNyRXZ0VlRIMDRIeGcwdERZTFNIWnpIdWlVZFZXNXVGMkl6dmVRNVF0WXotZnBUMjBMQTM0N0pVcGJ5cHhCMFhlS2NtLW1WVktrV1lTMVFha3h0ZXBpcjk0MTlSYlJDV0NTTzVwVlE1QnRkTUpURF9mSWNHQ2cwdWRPQlh6a3NJbnBWWjdWeDRfXzN3WHBjdGFuTi1wUlZ1ZWhJSHUyYk5zeFVJanNNOUNKQTRlalpUOFBTQl8zbU9hZmxTWEpfR2lET0I2MEoyMGVpaDhlX29CakVNc2RyV05FazdYeUJqTWEwcUhEMUg0Z3EwMGJtT1k1NHA1dUtuckpLODdVSjc0czJyRGZxa0JWZkRHcnJTcE93dDRWak13TWxlVXBWQzYtMThKdXlyR0plUUJfcnhQLTlZTkMwWmoxbXlCMHhKa0dnQnQwMC1aN0YtbjRJUGUyb21Odjh2OEJXcHhRLU5CdE5nNFdFQzdsbk1oVHh1U202SUhQdnp2UGs1cUhuZnVKY3hpZ3dobFZhZ0pKRTVvWjZOWDAxUm9CbURnSWY4NGNEcGVjWUdMaEoxSDY3QlY1OXNub1hwX2w0V056YUNuelFWelhqT0IzTnEtM1NkcVNyMEFVbGpsNm53M0JCVk1YVTNJREktNnVaVGNSOWlYTTZ2eTZySHNHeWkxQkhMY25sY3M2RVVnUGtRTzlSX0U0RVZ2S0h2cFVsSi1zT2NJSTF3WWNocExyWmM4dVpjakZhVjNFVXQ0ZzhBbVA4SVFDNE5zb2hlLUtOd2VDN1F2NkdBUGZvNjE0NG1yaU1GUGRDTlBOM1lBUGQtQTdRc3ItRlFISG8xdWxuR0QxVTNLSllBRVpxRkdZTzdMZ0NoanZLR2NzUjQwVWZoWC1scmNCRWp0enRHNE9ObWw1dGtOQ0FCcHp0bThCWFIwQ0FEWnBEZ0pkQWoybXNxVS1YcUczb2dIekdydHRWUlN2VTZxQzN3OGZuT1d2VFZuaTFpVVB0eEszWnJDdXpmUGcyN2pXNWRkdjZ1bnNSR0hObmMtT2RfMUJacFVJclhCWXI0X0ZTOS1DaFhvSGVGWm1Ud1JNUm9ZQnIyUlVWN2dDMUIybjZIbHhNaEhKQUZSNkJMTmR4N1BVUDM0UFZHeWJ5TFFfYjkxVGx3bmVBaDh5SlY3QUNSQjkzWHBaVXpNdnNiMWYybFFTMjRwcUt1ZDJZQTZobVJkc2FYX3BfN0J5WmJTaWVCc3NVb0tlbWhyY3lCU3dRT293akxySEZEUzFic0xXSUVjMmpLNlkzS2xFV1MwaFZBWGxybHQtU0ZpRnE2aldVcElHeTlsc0NQekk1Rl9DY00xLTlyVURfVnd4OXpOczlUbko1eXp5aTJYeDY4OWtOTExSYWYzU1RkUGdIbGdFV041NDJkNUlYNTZZTlV2cTRGSEdiME1VYVloVnZOTG55d2NTYlg3dVlXcjNucGgyYWlBclB3eW9QQ2hrb3dzd3ZvZmVIY203cEE0Sk1zNFkwRnFlSjFDMEc1NkVmQWpGNmZNOFRCYWdkRnctYmpwYmpMVzE0XzFIZWVzeEtPNkFkMkwyRUNCeUJmQ19KRW5hS2p5Z0hRNk9VQ0VSTlZBZDRzOElnVTM4dWFUV0tyYUc4WjhCZlE5SnRUT2VZbm03c0Fmb0E1TXA2bVZCQ3lqcnlGVGhTemZNblhZZ0tYZjhWWFpoeVg0N0hpVHc1ZVVaZGFDTU9jc2dRck0xa0xYLXRHZU9XM0NXdUkwZ3R3N3Y0dDNocE5pd0lKaTV4V19uRTE2T0U5bHU1eTk0b2JzSE56SkZ1VWtHOXctU3FXTXNsQ2JWLUw3V2VsMkJxeVhSb0xkSWFXNERYMHJ3R2cyZjduUTlUUFQ4MmFQM0ZEY0pGX3J1cXc1OE5yVnc5VDczSFgzbUpRREpfWkRRTFZQZGdoTzlzWG43TnUwaWI0UHdwdHpUWlhFQVV1TXRWY0drcGM2XzBOUGNndWREbkdWQzVfQ3Nfd1dKNXJDdTdWbFl4MXRLQ2s4eGROSkxBdW4wT3RQa29kU3ZwcjBpZFJZbHZnc3JRYlRvV2VkSlVNRjQzbkQtWVJxMkFabktrNGFZMTJ1LWNhemx1TWh0TTJBaml1Y2VIU053TmZHOVBZa3ZINklITm8xNjYxX01wcXJZTlJuR3U0bmpzTzNHY1o1bjcxV181d3JNZkhTeUN0SlhCWUNjVS1vZERCOV8xS1FkQTVfelRnamRUWHIwRHF5U2hCVE5mMTlib1lqZm9RX2hfN0MwQUt5M3FTeFFhZ2RsR2tweDJNMXhkMGdLZzBNbkVERTJrbkhRcWhrOGt2aU5kSTB5NTEzTjc2bG53OTlzVGZTcE9sWkJsUmRZVldmQkZqVHVheERNQjNTZndGUXpTNmJrMEdJVTZTX2JXTzBXM3BnM2lsRlFJRmJERDdtRmZwNmh3eG9JQnlIYnNnWUR0dlNvUnNzTHJkZTBKazJsb1ItUlpXbmFaejAyamMxcWNlU05BcGFhUkdJSlR0dmhWQmNiQ0d0OERxdkNCOEZSenUxQkZSNVdNTFJySnFucjlBZXFmdk5RUTJsOFEwcEh2ektvVnJIZmdmY3JaYzNzM1o0YTNkX2phejRsTEktZmFNRWtIQUlwS1Y4M0VCMlpTLUdOTVZxZ09wbTJObVVEeGxQaXdlU2w3cmx4Q29YaTZsakd3WEFMVWdnVV81Z1hyZHdwWWlaVlc0QzVUWVd0MmxtM0FNODRqRUlDUENRWThHVk5PejVCX1NnTmZvMmNWTmZSb1dFQWpvcW5GYlByaWVPUjk2eGM4S0Jhbm1leEZEbFNMUExnU1U5VXJ5Y25VVDUyeDFPam90OV9UZmVlZ18tNmFza1IxZEVsYU5rQjlROVlVVFN0U3EyYm5MZDRMVG9jZFJNVTFvaGVFMmJqV3RsUkMyS2RqMkZmRGVDOTAzVm5Sa3VmOVdTUGhZSmJnREt6UXVPOFBhZkV6b0VVYkdtMUxraERWelpKUEFQckxHbURzUmVRSkRMUFlvR2k0cDNGVjRSVkQ1akV4TEN1ZXZ0Z2hGSnRTNlhOM2RvUXV5cmc4M2hyaUpseWhHRzA4aEg5YzRCTXN5UUg3UWJqTWFVNFpZMFJNdFRvWmRtNkJBTV9ySkNpNVBUcHFPRGNfendQT1liZlF2a3BmT0NzSVJud2Y3c0VVRWNpZ1RFcWNDdDlyMXlkWkJhcV9SMm9vVHdKZW5aNEliVU1VaTVUTWw3ZVJCZlpTNE5WS3JDWS1TQzlQa3Z1dWg2ZGVoSkV0QjZjR3FZQ3BpanV0WnRGODVaV3FZVWVBTUpaQ0pUOHlKTk04VWZBRF9McXNqRWRERldzRVFRTUk3dUxkVWpReWRGQVNYVjNBTmMycFRQUC15WHRWVmhEbGlUSUZTNVFnYWRkN2hkdlAtclE1dHJWU1cwZDk0Q3MxS180cEFuR1NwV0hEWE11MDlfanlva005RkRsY3dOQzFRMVlLblE1Z1VRRk1tbktvLXZRZ1M4RnViVGgxZUZxNkhXV0xTT3VZcXBYWHVHVmE2WlJ5R0QzR0pVUnhHM3FfWld3eWF5Sjl5WFljXzJpY1AyYXpwOG5QT2NCSl9ZcVFjTXR1eEZpRlp0eUVubzJOaTJsVWJ3QUdpLS1RUS0tTGFsSzJHd2Z1aEVjZy5Hb3hhV1AtWnRkZjNlWTM3Tm5LcXlwV2Fhc1JBdmVKR3ppMVNMbTBHSEtvMzd4VV9BR2ZocWZiOHQ2SEhLNC0ya3VrNXlfWWVjLTBNNW5fSERJemhMZw=="><input type="hidden" name="_eventId" value="submit"><input type="hidden" name="geolocation"><!--
+                        <div th:replace="fragments/loginsidebar :: loginsidebar"/>
+                        --><input type="hidden" name="site_key" value="6Lcn93waAAAAAGEElpSzoui_EgNQmB8q80qAATV7"><input type="hidden" name="invisible" value="false"><!--  
+                         <input class="btn btn-block btn-submit"
+                               name="submit"
+                               accesskey="l"
+                               th:value="#{screen.welcome.button.login}"
+                               tabindex="6"
+                               type="submit"
+                               value="Login8"
+                        />
+                         --><input class="btn btn-block btn-submit" name="submit" accesskey="l" tabindex="6" type="submit" value="Entrar"></form>
+                    
+                    
+					<div class="group-links-password-management">
+	                    <form method="post" id="passwordManagementForm">
+	                        <input type="hidden" name="execution" value="02f055c3-b0ee-451c-87cc-34e6b389e1a7_ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LnpwN3J0QnJlQXEzTFBrWXdWN0UtNGI1a3Rsd1lxV21rS3kwQmNWNi1PaEh0bWJsdldGNGk5enBDd3BUeGZTQTAxZ3JETjB3S200QkFZQVktTDVkeUNXcDFZalUyQlJwQ2g1Y0VuZXBYd1o4OTVYZzJWcm9ySVFTZzEyQ19WUm9TNkdaOTlqeFJXbUg5aDEwNzZzcjl5dFRNeExGZS1GeC1lX0hFS1dhRWMtN3lnUUNsS2g1RUpUNGhRaUJ1aEVMR2VpSE9LalpnZWFocVpPZkFSdlNtSFkyTl93eXZweGF5M2tSaGpMUjdBUXcxejE4QlRiRmc3VmZnb2xsWG1WSkZMV2s4dGpBWDhIRkx3VE9XMFFhT0RHY2t3dHVNWGZ3N0RzMDNSZVlOUmlGZ050R2NNMF9IdTZsLUQ3M0d5YldLeGRYR2F2WWlKR1QtNWlqN3VTSHVlbW43RUhsVmNwUWZfZEF4TXkxZzg4Nk9SaUFKS1pMUlNQdzFhWHctYUctUzhkZWpacU1TbUV5U2dfUmZPMzBkVzN3SG9SdXdsZnZzUmJJVTVVWHZlUkNvWGxieVo0ZHVEbzFOeXJ4cjdubFNUR0FZMTFsZkE0d3RkZmNVZHVfVzNMUkVRVVh1YlBIenhZRFJpckN5UFJWN0Q4ekNjNndxd0NjNk1qR0p2NWxsN3Y5bkMwdHVrYThqdWlEVFJhNjlPNXVXSHNyREtkdGhxZTV4azBfVFRMWkhpaGROaDB2Ui1YTk1sUFdEOXNzalpFWE5pMWdxc0d4Mjd5SjZ1clF6NURsUVVhSXRrQ2xMZnFVXzVScWx1SE0ydnA0cGlCSXF3YkxFdjlCdWpyczk2cTZyb3NZRTBnakhMdklZbUlfdUNyRXZ0VlRIMDRIeGcwdERZTFNIWnpIdWlVZFZXNXVGMkl6dmVRNVF0WXotZnBUMjBMQTM0N0pVcGJ5cHhCMFhlS2NtLW1WVktrV1lTMVFha3h0ZXBpcjk0MTlSYlJDV0NTTzVwVlE1QnRkTUpURF9mSWNHQ2cwdWRPQlh6a3NJbnBWWjdWeDRfXzN3WHBjdGFuTi1wUlZ1ZWhJSHUyYk5zeFVJanNNOUNKQTRlalpUOFBTQl8zbU9hZmxTWEpfR2lET0I2MEoyMGVpaDhlX29CakVNc2RyV05FazdYeUJqTWEwcUhEMUg0Z3EwMGJtT1k1NHA1dUtuckpLODdVSjc0czJyRGZxa0JWZkRHcnJTcE93dDRWak13TWxlVXBWQzYtMThKdXlyR0plUUJfcnhQLTlZTkMwWmoxbXlCMHhKa0dnQnQwMC1aN0YtbjRJUGUyb21Odjh2OEJXcHhRLU5CdE5nNFdFQzdsbk1oVHh1U202SUhQdnp2UGs1cUhuZnVKY3hpZ3dobFZhZ0pKRTVvWjZOWDAxUm9CbURnSWY4NGNEcGVjWUdMaEoxSDY3QlY1OXNub1hwX2w0V056YUNuelFWelhqT0IzTnEtM1NkcVNyMEFVbGpsNm53M0JCVk1YVTNJREktNnVaVGNSOWlYTTZ2eTZySHNHeWkxQkhMY25sY3M2RVVnUGtRTzlSX0U0RVZ2S0h2cFVsSi1zT2NJSTF3WWNocExyWmM4dVpjakZhVjNFVXQ0ZzhBbVA4SVFDNE5zb2hlLUtOd2VDN1F2NkdBUGZvNjE0NG1yaU1GUGRDTlBOM1lBUGQtQTdRc3ItRlFISG8xdWxuR0QxVTNLSllBRVpxRkdZTzdMZ0NoanZLR2NzUjQwVWZoWC1scmNCRWp0enRHNE9ObWw1dGtOQ0FCcHp0bThCWFIwQ0FEWnBEZ0pkQWoybXNxVS1YcUczb2dIekdydHRWUlN2VTZxQzN3OGZuT1d2VFZuaTFpVVB0eEszWnJDdXpmUGcyN2pXNWRkdjZ1bnNSR0hObmMtT2RfMUJacFVJclhCWXI0X0ZTOS1DaFhvSGVGWm1Ud1JNUm9ZQnIyUlVWN2dDMUIybjZIbHhNaEhKQUZSNkJMTmR4N1BVUDM0UFZHeWJ5TFFfYjkxVGx3bmVBaDh5SlY3QUNSQjkzWHBaVXpNdnNiMWYybFFTMjRwcUt1ZDJZQTZobVJkc2FYX3BfN0J5WmJTaWVCc3NVb0tlbWhyY3lCU3dRT293akxySEZEUzFic0xXSUVjMmpLNlkzS2xFV1MwaFZBWGxybHQtU0ZpRnE2aldVcElHeTlsc0NQekk1Rl9DY00xLTlyVURfVnd4OXpOczlUbko1eXp5aTJYeDY4OWtOTExSYWYzU1RkUGdIbGdFV041NDJkNUlYNTZZTlV2cTRGSEdiME1VYVloVnZOTG55d2NTYlg3dVlXcjNucGgyYWlBclB3eW9QQ2hrb3dzd3ZvZmVIY203cEE0Sk1zNFkwRnFlSjFDMEc1NkVmQWpGNmZNOFRCYWdkRnctYmpwYmpMVzE0XzFIZWVzeEtPNkFkMkwyRUNCeUJmQ19KRW5hS2p5Z0hRNk9VQ0VSTlZBZDRzOElnVTM4dWFUV0tyYUc4WjhCZlE5SnRUT2VZbm03c0Fmb0E1TXA2bVZCQ3lqcnlGVGhTemZNblhZZ0tYZjhWWFpoeVg0N0hpVHc1ZVVaZGFDTU9jc2dRck0xa0xYLXRHZU9XM0NXdUkwZ3R3N3Y0dDNocE5pd0lKaTV4V19uRTE2T0U5bHU1eTk0b2JzSE56SkZ1VWtHOXctU3FXTXNsQ2JWLUw3V2VsMkJxeVhSb0xkSWFXNERYMHJ3R2cyZjduUTlUUFQ4MmFQM0ZEY0pGX3J1cXc1OE5yVnc5VDczSFgzbUpRREpfWkRRTFZQZGdoTzlzWG43TnUwaWI0UHdwdHpUWlhFQVV1TXRWY0drcGM2XzBOUGNndWREbkdWQzVfQ3Nfd1dKNXJDdTdWbFl4MXRLQ2s4eGROSkxBdW4wT3RQa29kU3ZwcjBpZFJZbHZnc3JRYlRvV2VkSlVNRjQzbkQtWVJxMkFabktrNGFZMTJ1LWNhemx1TWh0TTJBaml1Y2VIU053TmZHOVBZa3ZINklITm8xNjYxX01wcXJZTlJuR3U0bmpzTzNHY1o1bjcxV181d3JNZkhTeUN0SlhCWUNjVS1vZERCOV8xS1FkQTVfelRnamRUWHIwRHF5U2hCVE5mMTlib1lqZm9RX2hfN0MwQUt5M3FTeFFhZ2RsR2tweDJNMXhkMGdLZzBNbkVERTJrbkhRcWhrOGt2aU5kSTB5NTEzTjc2bG53OTlzVGZTcE9sWkJsUmRZVldmQkZqVHVheERNQjNTZndGUXpTNmJrMEdJVTZTX2JXTzBXM3BnM2lsRlFJRmJERDdtRmZwNmh3eG9JQnlIYnNnWUR0dlNvUnNzTHJkZTBKazJsb1ItUlpXbmFaejAyamMxcWNlU05BcGFhUkdJSlR0dmhWQmNiQ0d0OERxdkNCOEZSenUxQkZSNVdNTFJySnFucjlBZXFmdk5RUTJsOFEwcEh2ektvVnJIZmdmY3JaYzNzM1o0YTNkX2phejRsTEktZmFNRWtIQUlwS1Y4M0VCMlpTLUdOTVZxZ09wbTJObVVEeGxQaXdlU2w3cmx4Q29YaTZsakd3WEFMVWdnVV81Z1hyZHdwWWlaVlc0QzVUWVd0MmxtM0FNODRqRUlDUENRWThHVk5PejVCX1NnTmZvMmNWTmZSb1dFQWpvcW5GYlByaWVPUjk2eGM4S0Jhbm1leEZEbFNMUExnU1U5VXJ5Y25VVDUyeDFPam90OV9UZmVlZ18tNmFza1IxZEVsYU5rQjlROVlVVFN0U3EyYm5MZDRMVG9jZFJNVTFvaGVFMmJqV3RsUkMyS2RqMkZmRGVDOTAzVm5Sa3VmOVdTUGhZSmJnREt6UXVPOFBhZkV6b0VVYkdtMUxraERWelpKUEFQckxHbURzUmVRSkRMUFlvR2k0cDNGVjRSVkQ1akV4TEN1ZXZ0Z2hGSnRTNlhOM2RvUXV5cmc4M2hyaUpseWhHRzA4aEg5YzRCTXN5UUg3UWJqTWFVNFpZMFJNdFRvWmRtNkJBTV9ySkNpNVBUcHFPRGNfendQT1liZlF2a3BmT0NzSVJud2Y3c0VVRWNpZ1RFcWNDdDlyMXlkWkJhcV9SMm9vVHdKZW5aNEliVU1VaTVUTWw3ZVJCZlpTNE5WS3JDWS1TQzlQa3Z1dWg2ZGVoSkV0QjZjR3FZQ3BpanV0WnRGODVaV3FZVWVBTUpaQ0pUOHlKTk04VWZBRF9McXNqRWRERldzRVFRTUk3dUxkVWpReWRGQVNYVjNBTmMycFRQUC15WHRWVmhEbGlUSUZTNVFnYWRkN2hkdlAtclE1dHJWU1cwZDk0Q3MxS180cEFuR1NwV0hEWE11MDlfanlva005RkRsY3dOQzFRMVlLblE1Z1VRRk1tbktvLXZRZ1M4RnViVGgxZUZxNkhXV0xTT3VZcXBYWHVHVmE2WlJ5R0QzR0pVUnhHM3FfWld3eWF5Sjl5WFljXzJpY1AyYXpwOG5QT2NCSl9ZcVFjTXR1eEZpRlp0eUVubzJOaTJsVWJ3QUdpLS1RUS0tTGFsSzJHd2Z1aEVjZy5Hb3hhV1AtWnRkZjNlWTM3Tm5LcXlwV2Fhc1JBdmVKR3ppMVNMbTBHSEtvMzd4VV9BR2ZocWZiOHQ2SEhLNC0ya3VrNXlfWWVjLTBNNW5fSERJemhMZw=="><input type="hidden" name="_eventId" value="resetPassword"><a href="javascript:void(0)" onclick="$('#passwordManagementForm').submit();">Esqueceu login/senha</a>
+	                        <p></p></form>
+	                    
+	                    <div class="separator-links"></div>
+	                    
+						<!--
+	                    <form th:if="${passwordManagementEnabled}" method="post" id="passwordManagementUserForm">
+	                        <input type="hidden" name="execution" th:value="${flowExecutionKey}"/>
+	                        <input type="hidden" name="_eventId" value="forgotUsername"/>
+	                        <a th:utext="#{screen.pm.button.forgotUsername}" href="javascript:void(0)" onclick="$('#passwordManagementUserForm').submit();"/>
+	                        <p/>
+	                    </form>
+	                    --><form method="post" id="passwordManagementFirstAccessForm">
+	                        <input type="hidden" name="execution" value="02f055c3-b0ee-451c-87cc-34e6b389e1a7_ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LnpwN3J0QnJlQXEzTFBrWXdWN0UtNGI1a3Rsd1lxV21rS3kwQmNWNi1PaEh0bWJsdldGNGk5enBDd3BUeGZTQTAxZ3JETjB3S200QkFZQVktTDVkeUNXcDFZalUyQlJwQ2g1Y0VuZXBYd1o4OTVYZzJWcm9ySVFTZzEyQ19WUm9TNkdaOTlqeFJXbUg5aDEwNzZzcjl5dFRNeExGZS1GeC1lX0hFS1dhRWMtN3lnUUNsS2g1RUpUNGhRaUJ1aEVMR2VpSE9LalpnZWFocVpPZkFSdlNtSFkyTl93eXZweGF5M2tSaGpMUjdBUXcxejE4QlRiRmc3VmZnb2xsWG1WSkZMV2s4dGpBWDhIRkx3VE9XMFFhT0RHY2t3dHVNWGZ3N0RzMDNSZVlOUmlGZ050R2NNMF9IdTZsLUQ3M0d5YldLeGRYR2F2WWlKR1QtNWlqN3VTSHVlbW43RUhsVmNwUWZfZEF4TXkxZzg4Nk9SaUFKS1pMUlNQdzFhWHctYUctUzhkZWpacU1TbUV5U2dfUmZPMzBkVzN3SG9SdXdsZnZzUmJJVTVVWHZlUkNvWGxieVo0ZHVEbzFOeXJ4cjdubFNUR0FZMTFsZkE0d3RkZmNVZHVfVzNMUkVRVVh1YlBIenhZRFJpckN5UFJWN0Q4ekNjNndxd0NjNk1qR0p2NWxsN3Y5bkMwdHVrYThqdWlEVFJhNjlPNXVXSHNyREtkdGhxZTV4azBfVFRMWkhpaGROaDB2Ui1YTk1sUFdEOXNzalpFWE5pMWdxc0d4Mjd5SjZ1clF6NURsUVVhSXRrQ2xMZnFVXzVScWx1SE0ydnA0cGlCSXF3YkxFdjlCdWpyczk2cTZyb3NZRTBnakhMdklZbUlfdUNyRXZ0VlRIMDRIeGcwdERZTFNIWnpIdWlVZFZXNXVGMkl6dmVRNVF0WXotZnBUMjBMQTM0N0pVcGJ5cHhCMFhlS2NtLW1WVktrV1lTMVFha3h0ZXBpcjk0MTlSYlJDV0NTTzVwVlE1QnRkTUpURF9mSWNHQ2cwdWRPQlh6a3NJbnBWWjdWeDRfXzN3WHBjdGFuTi1wUlZ1ZWhJSHUyYk5zeFVJanNNOUNKQTRlalpUOFBTQl8zbU9hZmxTWEpfR2lET0I2MEoyMGVpaDhlX29CakVNc2RyV05FazdYeUJqTWEwcUhEMUg0Z3EwMGJtT1k1NHA1dUtuckpLODdVSjc0czJyRGZxa0JWZkRHcnJTcE93dDRWak13TWxlVXBWQzYtMThKdXlyR0plUUJfcnhQLTlZTkMwWmoxbXlCMHhKa0dnQnQwMC1aN0YtbjRJUGUyb21Odjh2OEJXcHhRLU5CdE5nNFdFQzdsbk1oVHh1U202SUhQdnp2UGs1cUhuZnVKY3hpZ3dobFZhZ0pKRTVvWjZOWDAxUm9CbURnSWY4NGNEcGVjWUdMaEoxSDY3QlY1OXNub1hwX2w0V056YUNuelFWelhqT0IzTnEtM1NkcVNyMEFVbGpsNm53M0JCVk1YVTNJREktNnVaVGNSOWlYTTZ2eTZySHNHeWkxQkhMY25sY3M2RVVnUGtRTzlSX0U0RVZ2S0h2cFVsSi1zT2NJSTF3WWNocExyWmM4dVpjakZhVjNFVXQ0ZzhBbVA4SVFDNE5zb2hlLUtOd2VDN1F2NkdBUGZvNjE0NG1yaU1GUGRDTlBOM1lBUGQtQTdRc3ItRlFISG8xdWxuR0QxVTNLSllBRVpxRkdZTzdMZ0NoanZLR2NzUjQwVWZoWC1scmNCRWp0enRHNE9ObWw1dGtOQ0FCcHp0bThCWFIwQ0FEWnBEZ0pkQWoybXNxVS1YcUczb2dIekdydHRWUlN2VTZxQzN3OGZuT1d2VFZuaTFpVVB0eEszWnJDdXpmUGcyN2pXNWRkdjZ1bnNSR0hObmMtT2RfMUJacFVJclhCWXI0X0ZTOS1DaFhvSGVGWm1Ud1JNUm9ZQnIyUlVWN2dDMUIybjZIbHhNaEhKQUZSNkJMTmR4N1BVUDM0UFZHeWJ5TFFfYjkxVGx3bmVBaDh5SlY3QUNSQjkzWHBaVXpNdnNiMWYybFFTMjRwcUt1ZDJZQTZobVJkc2FYX3BfN0J5WmJTaWVCc3NVb0tlbWhyY3lCU3dRT293akxySEZEUzFic0xXSUVjMmpLNlkzS2xFV1MwaFZBWGxybHQtU0ZpRnE2aldVcElHeTlsc0NQekk1Rl9DY00xLTlyVURfVnd4OXpOczlUbko1eXp5aTJYeDY4OWtOTExSYWYzU1RkUGdIbGdFV041NDJkNUlYNTZZTlV2cTRGSEdiME1VYVloVnZOTG55d2NTYlg3dVlXcjNucGgyYWlBclB3eW9QQ2hrb3dzd3ZvZmVIY203cEE0Sk1zNFkwRnFlSjFDMEc1NkVmQWpGNmZNOFRCYWdkRnctYmpwYmpMVzE0XzFIZWVzeEtPNkFkMkwyRUNCeUJmQ19KRW5hS2p5Z0hRNk9VQ0VSTlZBZDRzOElnVTM4dWFUV0tyYUc4WjhCZlE5SnRUT2VZbm03c0Fmb0E1TXA2bVZCQ3lqcnlGVGhTemZNblhZZ0tYZjhWWFpoeVg0N0hpVHc1ZVVaZGFDTU9jc2dRck0xa0xYLXRHZU9XM0NXdUkwZ3R3N3Y0dDNocE5pd0lKaTV4V19uRTE2T0U5bHU1eTk0b2JzSE56SkZ1VWtHOXctU3FXTXNsQ2JWLUw3V2VsMkJxeVhSb0xkSWFXNERYMHJ3R2cyZjduUTlUUFQ4MmFQM0ZEY0pGX3J1cXc1OE5yVnc5VDczSFgzbUpRREpfWkRRTFZQZGdoTzlzWG43TnUwaWI0UHdwdHpUWlhFQVV1TXRWY0drcGM2XzBOUGNndWREbkdWQzVfQ3Nfd1dKNXJDdTdWbFl4MXRLQ2s4eGROSkxBdW4wT3RQa29kU3ZwcjBpZFJZbHZnc3JRYlRvV2VkSlVNRjQzbkQtWVJxMkFabktrNGFZMTJ1LWNhemx1TWh0TTJBaml1Y2VIU053TmZHOVBZa3ZINklITm8xNjYxX01wcXJZTlJuR3U0bmpzTzNHY1o1bjcxV181d3JNZkhTeUN0SlhCWUNjVS1vZERCOV8xS1FkQTVfelRnamRUWHIwRHF5U2hCVE5mMTlib1lqZm9RX2hfN0MwQUt5M3FTeFFhZ2RsR2tweDJNMXhkMGdLZzBNbkVERTJrbkhRcWhrOGt2aU5kSTB5NTEzTjc2bG53OTlzVGZTcE9sWkJsUmRZVldmQkZqVHVheERNQjNTZndGUXpTNmJrMEdJVTZTX2JXTzBXM3BnM2lsRlFJRmJERDdtRmZwNmh3eG9JQnlIYnNnWUR0dlNvUnNzTHJkZTBKazJsb1ItUlpXbmFaejAyamMxcWNlU05BcGFhUkdJSlR0dmhWQmNiQ0d0OERxdkNCOEZSenUxQkZSNVdNTFJySnFucjlBZXFmdk5RUTJsOFEwcEh2ektvVnJIZmdmY3JaYzNzM1o0YTNkX2phejRsTEktZmFNRWtIQUlwS1Y4M0VCMlpTLUdOTVZxZ09wbTJObVVEeGxQaXdlU2w3cmx4Q29YaTZsakd3WEFMVWdnVV81Z1hyZHdwWWlaVlc0QzVUWVd0MmxtM0FNODRqRUlDUENRWThHVk5PejVCX1NnTmZvMmNWTmZSb1dFQWpvcW5GYlByaWVPUjk2eGM4S0Jhbm1leEZEbFNMUExnU1U5VXJ5Y25VVDUyeDFPam90OV9UZmVlZ18tNmFza1IxZEVsYU5rQjlROVlVVFN0U3EyYm5MZDRMVG9jZFJNVTFvaGVFMmJqV3RsUkMyS2RqMkZmRGVDOTAzVm5Sa3VmOVdTUGhZSmJnREt6UXVPOFBhZkV6b0VVYkdtMUxraERWelpKUEFQckxHbURzUmVRSkRMUFlvR2k0cDNGVjRSVkQ1akV4TEN1ZXZ0Z2hGSnRTNlhOM2RvUXV5cmc4M2hyaUpseWhHRzA4aEg5YzRCTXN5UUg3UWJqTWFVNFpZMFJNdFRvWmRtNkJBTV9ySkNpNVBUcHFPRGNfendQT1liZlF2a3BmT0NzSVJud2Y3c0VVRWNpZ1RFcWNDdDlyMXlkWkJhcV9SMm9vVHdKZW5aNEliVU1VaTVUTWw3ZVJCZlpTNE5WS3JDWS1TQzlQa3Z1dWg2ZGVoSkV0QjZjR3FZQ3BpanV0WnRGODVaV3FZVWVBTUpaQ0pUOHlKTk04VWZBRF9McXNqRWRERldzRVFRTUk3dUxkVWpReWRGQVNYVjNBTmMycFRQUC15WHRWVmhEbGlUSUZTNVFnYWRkN2hkdlAtclE1dHJWU1cwZDk0Q3MxS180cEFuR1NwV0hEWE11MDlfanlva005RkRsY3dOQzFRMVlLblE1Z1VRRk1tbktvLXZRZ1M4RnViVGgxZUZxNkhXV0xTT3VZcXBYWHVHVmE2WlJ5R0QzR0pVUnhHM3FfWld3eWF5Sjl5WFljXzJpY1AyYXpwOG5QT2NCSl9ZcVFjTXR1eEZpRlp0eUVubzJOaTJsVWJ3QUdpLS1RUS0tTGFsSzJHd2Z1aEVjZy5Hb3hhV1AtWnRkZjNlWTM3Tm5LcXlwV2Fhc1JBdmVKR3ppMVNMbTBHSEtvMzd4VV9BR2ZocWZiOHQ2SEhLNC0ya3VrNXlfWWVjLTBNNW5fSERJemhMZw=="><input type="hidden" name="_eventId" value="firstAccess"><a href="javascript:void(0)" onclick="$('#passwordManagementFirstAccessForm').submit();">Criar login</a>
+	                        <p></p></form>
+					</div>
+                    <div style="display: flex; justify-content: center; padding: 50px;">
+                    	<a href="#">Ajuda</a>
+                    </div>
+
+                    <script type="text/javascript">
+                        /*<![CDATA[*/
+                        var i = "Um momento por favor..."
+                            /*]]>*/
+                            $(document).ready(function () {
+                                $("#fm1").submit(function () {
+                                    $(":submit").attr("disabled", true);
+                                    $(":submit").attr("value", i);
+                                    return true;
+                                });
+                            });
+                    </script>
+                    
+                     <script type="text/javascript">
+                    	$('#checkbox_login').change(function() {
+                    		if (this.checked) {
+                    			$('#username').mask('000.000.000-00');
+                    			$('#username').attr("placeholder", "Informe seu CPF");
+                    		} else {
+                    			$('#username').unmask();
+                    			$('#username').attr("placeholder", "Informe seu login");
+                    		}
+                        });
+                    	
+                    	$('#username').keyup(function() {
+							$(this).val($(this).val().replace(/ +?/g, ''));
+						});
+						
+						$('#password').keyup(function() {
+							$(this).val($(this).val().replace(/ +?/g, ''));
+						});
+                    </script>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer" role="contentinfo">
+        <div class="container">
+            <span id="copyright">@2019 <a href="https://www.ufg.br/" target="_blank">Universidade Federal de Goiás</a></span>
+        </div>
+    </footer>
+
+
+
+<div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div class="g-recaptcha-bubble-arrow" style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;"></div><div class="g-recaptcha-bubble-arrow" style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;"></div><div style="z-index: 2000000000; position: relative;"><iframe title="Desafio reCAPTCHA" src="https://www.google.com/recaptcha/api2/bframe?hl=pt-PT&amp;v=YhkYx1k-yvvb8OonJPmOpoJY&amp;k=6Lcn93waAAAAAGEElpSzoui_EgNQmB8q80qAATV7" name="c-mm193ndoa3m9" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox" style="width: 100%; height: 100%;"></iframe></div></div></body></html>
