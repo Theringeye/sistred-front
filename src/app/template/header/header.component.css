@@ -1,0 +1,16 @@
+mat-toolbar{
+    background-color: #66aad5;
+}
+
+button{
+    background-color: #66aad5;
+    color: #fff;
+}
+h1 {
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+}
+.example-spacer {
+    flex: 1 1 auto;
+  }
