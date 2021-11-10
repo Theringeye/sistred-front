@@ -12,6 +12,7 @@ import { MovimentacaoComponent } from './views/movimentacao/movimentacao.compone
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import { NavComponent } from './template/nav/nav.component';
 
 
 
@@ -24,6 +25,7 @@ import {MatIconModule} from '@angular/material/icon';
     HeaderComponent,
     FooterComponent,
     MovimentacaoComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,
