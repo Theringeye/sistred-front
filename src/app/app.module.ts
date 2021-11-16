@@ -9,10 +9,12 @@ import { HeaderComponent } from './template/header/header.component';
 import { FooterComponent } from './template/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MovimentacaoComponent } from './views/movimentacao/movimentacao.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { NavComponent } from './template/nav/nav.component';
+import {MatListModule} from '@angular/material/list';
 
 
 
@@ -32,7 +34,9 @@ import { NavComponent } from './template/nav/nav.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,8 @@
+.container {
+    min-width: 100%;
+    min-height: 85%;
+  }
+  
+ .side-nav{
+     min-width: 380px;
+ }

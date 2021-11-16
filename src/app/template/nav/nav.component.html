@@ -1,1 +1,13 @@
-<p>nav works!</p>
+<mat-drawer-container class="container" autosize>
+    <mat-drawer mode="side" opened class="side-nav">
+        <mat-selection-list #opcoes [multiple]="false">
+            <mat-list-option *ngFor="let opcao of opcoesNav" [value]="opcao">
+              {{opcao}}
+            </mat-list-option>
+          </mat-selection-list>
+    </mat-drawer>
+    <mat-drawer-content></mat-drawer-content>
+  
+   
+  
+  </mat-drawer-container>
