@@ -15,6 +15,11 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { NavComponent } from './template/nav/nav.component';
 import {MatListModule} from '@angular/material/list';
+import { PainelComponent } from './views/painel/painel.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatDividerModule} from '@angular/material/divider';
+
+
 
 
 
@@ -28,6 +33,7 @@ import {MatListModule} from '@angular/material/list';
     FooterComponent,
     MovimentacaoComponent,
     NavComponent,
+    PainelComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +42,10 @@ import {MatListModule} from '@angular/material/list';
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatCardModule,
+    MatDividerModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

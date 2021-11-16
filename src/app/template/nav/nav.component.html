@@ -1,12 +1,16 @@
 <mat-drawer-container class="container" autosize>
     <mat-drawer mode="side" opened class="side-nav">
         <mat-selection-list #opcoes [multiple]="false">
-            <mat-list-option *ngFor="let opcao of opcoesNav" [value]="opcao">
-              {{opcao}}
+            <mat-list-option *ngFor="let opcao of opcoesNav" [value]="opcao">              
+              <mat-nav-list>
+                <a mat-list-item routerLink=""> {{ opcao }} </a>
+             </mat-nav-list>
             </mat-list-option>
           </mat-selection-list>
     </mat-drawer>
-    <mat-drawer-content></mat-drawer-content>
+    <mat-drawer-content>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
   
    
   

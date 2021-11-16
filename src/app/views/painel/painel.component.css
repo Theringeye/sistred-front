@@ -1,0 +1,19 @@
+.painel{
+    padding: 3em;
+    color: rgb(124, 124, 124);
+}
+
+.painel-info-cards{
+    width: 100%;
+    display: flex;
+}
+
+.info-card {
+    color: #fff;
+    max-width: 25%;
+    margin: 1em 2em 1em 0;
+  }
+
+  .verde{background-color: darkolivegreen;}
+  .amarelo{background-color: goldenrod;}
+  .vermelho{background-color: indianred;}
