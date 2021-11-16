@@ -12,6 +12,6 @@ export class NavComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  opcoesNav: string[] = ['Painel','Ativos', 'Movimentações'];
+  opcoesNav: string[] = ['Painel','Ativos', 'Movimentacoes'];
 
 }

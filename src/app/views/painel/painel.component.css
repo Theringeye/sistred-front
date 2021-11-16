@@ -14,6 +14,6 @@
     margin: 1em 2em 1em 0;
   }
 
-  .verde{background-color: darkolivegreen;}
-  .amarelo{background-color: goldenrod;}
+  .verde{background-color: rgb(180, 206, 137);}
+  .amarelo{background-color: rgb(224, 231, 127);}
   .vermelho{background-color: indianred;}

@@ -3,7 +3,7 @@
         <mat-selection-list #opcoes [multiple]="false">
             <mat-list-option *ngFor="let opcao of opcoesNav" [value]="opcao">              
               <mat-nav-list>
-                <a mat-list-item routerLink=""> {{ opcao }} </a>
+                <a mat-list-item routerLink="/{{opcao}}"> {{ opcao }} </a>
              </mat-nav-list>
             </mat-list-option>
           </mat-selection-list>

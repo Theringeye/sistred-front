@@ -18,6 +18,7 @@ import {MatListModule} from '@angular/material/list';
 import { PainelComponent } from './views/painel/painel.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
+import { FormAtivosComponent } from './views/forms/form-ativos/form-ativos.component';
 
 
 
@@ -34,6 +35,7 @@ import {MatDividerModule} from '@angular/material/divider';
     MovimentacaoComponent,
     NavComponent,
     PainelComponent,
+    FormAtivosComponent,
   ],
   imports: [
     BrowserModule,
