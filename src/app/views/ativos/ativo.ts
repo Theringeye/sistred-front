@@ -4,4 +4,6 @@ export interface Ativo{
     nome: string;
     fornecedor: string;
     observacao: string;
+    //localidade: string;
+    //dataRegistro: Date;
 }

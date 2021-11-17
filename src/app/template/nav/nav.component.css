@@ -6,3 +6,8 @@
  .side-nav{
      min-width: 380px;
  }
+
+ .container-content{
+    padding: 2.5em;
+    color: rgb(124, 124, 124)
+ }

@@ -20,9 +20,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
 import { FormAtivosComponent } from './views/forms/form-ativos/form-ativos.component';
 import { AtivosComponent } from './views/ativos/ativos.component';
-
-
-
+import {MatTableModule} from '@angular/material/table';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 
@@ -48,7 +47,9 @@ import { AtivosComponent } from './views/ativos/ativos.component';
     MatSidenavModule,
     MatListModule,
     MatCardModule,
-    MatDividerModule
+    MatDividerModule,
+    MatTableModule,
+    MatFormFieldModule
     
   ],
   providers: [],
