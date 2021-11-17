@@ -8,7 +8,7 @@ import { HomeComponent } from './views/home/home.component';
 import { HeaderComponent } from './template/header/header.component';
 import { FooterComponent } from './template/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MovimentacaoComponent } from './views/movimentacao/movimentacao.component';
+import { MovimentacoesComponent } from './views/movimentacoes/movimentacoes.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -19,6 +19,7 @@ import { PainelComponent } from './views/painel/painel.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
 import { FormAtivosComponent } from './views/forms/form-ativos/form-ativos.component';
+import { AtivosComponent } from './views/ativos/ativos.component';
 
 
 
@@ -32,10 +33,11 @@ import { FormAtivosComponent } from './views/forms/form-ativos/form-ativos.compo
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    MovimentacaoComponent,
+    MovimentacoesComponent,
     NavComponent,
     PainelComponent,
     FormAtivosComponent,
+    AtivosComponent,
   ],
   imports: [
     BrowserModule,
