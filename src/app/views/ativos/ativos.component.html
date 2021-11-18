@@ -1,7 +1,17 @@
 <h1>Ativos</h1>
 <mat-divider></mat-divider>
 
-<mat-form-field appearance="standard">
-    <mat-label>Filter</mat-label>
-    <input placeholder="Ex. Core i5" #input>
-  </mat-form-field>
+<mat-card *ngFor="let ativo of ativos" class="cartao-ativos">
+  <mat-card-header>
+    <mat-card-title> {{ativo.patrimonio}}</mat-card-title>
+    <mat-card-subtitle> {{ativo.nome}}</mat-card-subtitle>
+    <mat-card-actions align="end">
+      <button mat-raised-button color="primary">Ver</button>
+      <button mat-raised-button color="accent">Movimentar</button>
+    </mat-card-actions>
+  </mat-card-header>
+  <mat-card-content class="cartao-ativos-conteudo">
+    <p>{{ativo.fornecedor}} | {{ativo.observacao}}</p>
+  </mat-card-content>
+  
+</mat-card>

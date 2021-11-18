@@ -1,0 +1,11 @@
+.cartao-ativos{
+    padding: .5em;
+    margin-bottom: 1em;
+}
+
+.cartao-ativos mat-card-subtitle{
+    font-size: 1.25em;
+}
+.cartao-ativos-conteudo p{
+    font-size: 1.15em;
+}

@@ -22,6 +22,10 @@ import { FormAtivosComponent } from './views/forms/form-ativos/form-ativos.compo
 import { AtivosComponent } from './views/ativos/ativos.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSelectModule} from '@angular/material/select';
+
 
 
 
@@ -49,7 +53,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatCardModule,
     MatDividerModule,
     MatTableModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatButtonModule,
+    MatInputModule,
+    MatSelectModule
     
   ],
   providers: [],

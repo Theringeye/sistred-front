@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Fornecedor } from '../../ativos/fornecedor';
+import { Fornecedores } from '../../ativos/mock-fornecedor';
 
 @Component({
   selector: 'app-form-ativos',
@@ -7,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormAtivosComponent implements OnInit {
 
+  fornecedores: Fornecedor[] = Fornecedores;
   constructor() { }
 
   ngOnInit(): void {
