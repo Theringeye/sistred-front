@@ -10,6 +10,8 @@ import { FooterComponent } from './template/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MovimentacoesComponent } from './views/movimentacoes/movimentacoes.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatTabsModule} from '@angular/material/tabs';
+
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
@@ -25,6 +27,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
+import { CabosComponent } from './views/cabos/cabos.component';
+import { FormCabosComponent } from './views/forms/form-cabos/form-cabos.component';
 
 
 
@@ -41,6 +45,8 @@ import {MatSelectModule} from '@angular/material/select';
     PainelComponent,
     FormAtivosComponent,
     AtivosComponent,
+    CabosComponent,
+    FormCabosComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,7 +62,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatFormFieldModule,
     MatButtonModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTabsModule
     
   ],
   providers: [],

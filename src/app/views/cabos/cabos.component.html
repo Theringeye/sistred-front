@@ -1,0 +1,31 @@
+<div class="container">
+    <h2>Novo Cabo</h2>
+    <button mat-flat-button color="primary">Novo Cabo</button>
+    <mat-divider></mat-divider>
+    <h2>Todos os Cabos</h2>
+    <!--
+        Lista de todos os cabos
+    -->
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> ID. </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+        <ng-container matColumnDef="tipo">
+            <th mat-header-cell *matHeaderCellDef> Tipo </th>
+            <td mat-cell *matCellDef="let element"> {{element.tipo}} </td>
+        </ng-container>
+        <ng-container matColumnDef="fabricante">
+            <th mat-header-cell *matHeaderCellDef> Fabricante </th>
+            <td mat-cell *matCellDef="let element"> {{element.fabricante}} </td>
+        </ng-container>
+        <ng-container matColumnDef="mais">
+            <th mat-header-cell *matHeaderCellDef> Ver Mais </th>
+            <td mat-cell *matCellDef="">
+                <mat-icon>description</mat-icon>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

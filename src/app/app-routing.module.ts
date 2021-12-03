@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AtivosComponent } from './views/ativos/ativos.component';
+import { CabosComponent } from './views/cabos/cabos.component';
 import { FormAtivosComponent } from './views/forms/form-ativos/form-ativos.component';
+import { FormCabosComponent } from './views/forms/form-cabos/form-cabos.component';
 import { MovimentacoesComponent } from './views/movimentacoes/movimentacoes.component';
 import { PainelComponent } from './views/painel/painel.component';
 
@@ -29,6 +31,14 @@ const routes: Routes = [
   {
     path: 'movimentacoes',
     component: MovimentacoesComponent
+  },
+  {
+    path: 'cabos',
+    component: CabosComponent
+  },
+  {
+    path: 'form-cabos',
+    component: FormCabosComponent
   }
 ];
 
