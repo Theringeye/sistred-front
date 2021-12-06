@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MovimentacoesComponent } from './views/movimentacoes/movimentacoes.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatTabsModule} from '@angular/material/tabs';
+
+import { HomeService } from './views/home/home.service';
+import { CabosService } from './views/cabos/cabos.service';
+import { LoginService } from './views/login/login.service';
+
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
+import { APP_BASE_HREF } from '@angular/common';
 
 
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -29,6 +37,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
 import { CabosComponent } from './views/cabos/cabos.component';
 import { FormCabosComponent } from './views/forms/form-cabos/form-cabos.component';
+import { AuthInterceptor } from './http-interceptor/auth-interceptor';
+import { AuthGuard } from './guards/auth.guard';
 
 
 
@@ -63,10 +73,14 @@ import { FormCabosComponent } from './views/forms/form-cabos/form-cabos.componen
     MatButtonModule,
     MatInputModule,
     MatSelectModule,
-    MatTabsModule
+    MatTabsModule,
+    HttpClientModule
     
   ],
-  providers: [],
+  providers: [AuthGuard, HomeService, CabosService, LoginService,
+    {provide: APP_BASE_HREF, useValue: '/' }, 
+    {provide:  HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
