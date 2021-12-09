@@ -16,11 +16,7 @@ export class CabosComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  testeRequestGETApi() {
-    this.cabosService.testeRequestGETApi();
-  }
-
-  testeRequestPOSTApi() {
-    this.cabosService.testeRequestPOSTApi();
+  listarCabos(){
+    this.cabosService.listarCabos();
   }
 }

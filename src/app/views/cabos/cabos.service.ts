@@ -5,24 +5,12 @@ import { HttpClient } from "@angular/common/http";
   providedIn: "root",
 })
 export class CabosService {
+  URI:string = "http://localhost:8080/cabo";
   constructor(private http: HttpClient) {}
 
-  testeRequestGETApi() {
-    console.log("passou pelo teste de requisição na camada se serviço");
-    /*const result = await this.http
-      .post("http://localhost:8080/login", usuario, { responseType: "text" })
-      .toPromise();*/
-    this.http.get("http://localhost:8080/movimentacao/1").subscribe((data) => {
+  listarCabos() {
+    this.http.get(this.URI).subscribe((data) => {
       console.log(data);
     });
-  }
-
-  //passar o objeto que será salvo, por parâmetro. Esse objeto deve vir da classe ts COMPONENT
-  async testeRequestPOSTApi() {
-    /*const result = await this.http
-      .post("http://localhost:8080/login", usuario, { responseType: "json" })
-      .toPromise();
-    
-   });*/
   }
 }
