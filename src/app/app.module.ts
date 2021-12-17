@@ -36,9 +36,9 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
 import { CabosComponent } from './views/cabos/cabos.component';
-import { FormCabosComponent } from './views/forms/form-cabos/form-cabos.component';
 import { AuthInterceptor } from './http-interceptor/auth-interceptor';
 import { AuthGuard } from './guards/auth.guard';
+import { FormCabosComponent } from './views/cabos/form-cabos/form-cabos.component';
 
 
 

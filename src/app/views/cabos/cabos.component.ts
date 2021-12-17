@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { Cabo } from "./cabo";
 import { CabosService } from "./cabos.service";
-import { MockCabos } from "./mock-cabos";
+
 
 @Component({
   selector: "app-cabos",
@@ -8,15 +10,27 @@ import { MockCabos } from "./mock-cabos";
   styleUrls: ["./cabos.component.css"],
 })
 export class CabosComponent implements OnInit {
-  cabos = MockCabos;
+  dataSource: Cabo[] = [];
   displayedColumns: string[] = ["id", "tipo", "fabricante", "mais"];
-  dataSource = this.cabos;
+  
+  constructor(private cabosService: CabosService, private router:Router) {}
 
-  constructor(private cabosService: CabosService) {}
+  ngOnInit(): void {
+    this.findAll();
+  }
 
-  ngOnInit(): void {}
+  findAll(){
+    this.cabosService.findAll().subscribe(resposta =>{
+      this.dataSource = resposta;
+      console.log(resposta);
+    })
+  }
 
-  listarCabos(){
-    this.cabosService.listarCabos();
+  irParaFormCabo(){
+    this.router.navigate(["form-cabo"]);
+  }
+
+  verMais(id: number){
+    console.log(id);
   }
 }

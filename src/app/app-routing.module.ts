@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AtivosComponent } from './views/ativos/ativos.component';
 import { CabosComponent } from './views/cabos/cabos.component';
+import { FormCabosComponent } from './views/cabos/form-cabos/form-cabos.component';
 import { FormAtivosComponent } from './views/forms/form-ativos/form-ativos.component';
-import { FormCabosComponent } from './views/forms/form-cabos/form-cabos.component';
 import { MovimentacoesComponent } from './views/movimentacoes/movimentacoes.component';
 import { PainelComponent } from './views/painel/painel.component';
 
@@ -37,7 +37,7 @@ const routes: Routes = [
     component: CabosComponent
   },
   {
-    path: 'form-cabos',
+    path: 'form-cabo',
     component: FormCabosComponent
   }
 ];
