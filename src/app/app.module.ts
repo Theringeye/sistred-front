@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -39,6 +40,7 @@ import { CabosComponent } from './views/cabos/cabos.component';
 import { AuthInterceptor } from './http-interceptor/auth-interceptor';
 import { AuthGuard } from './guards/auth.guard';
 import { FormCabosComponent } from './views/cabos/form-cabos/form-cabos.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -74,7 +76,9 @@ import { FormCabosComponent } from './views/cabos/form-cabos/form-cabos.componen
     MatInputModule,
     MatSelectModule,
     MatTabsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    MatSnackBarModule
     
   ],
   providers: [AuthGuard, HomeService, CabosService, LoginService,
