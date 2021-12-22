@@ -41,6 +41,8 @@ import { AuthInterceptor } from './http-interceptor/auth-interceptor';
 import { AuthGuard } from './guards/auth.guard';
 import { FormCabosComponent } from './views/cabos/form-cabos/form-cabos.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { VerCaboComponent } from './views/cabos/ver-cabo/ver-cabo.component';
+import { DelCaboComponent } from './views/cabos/del-cabo/del-cabo.component';
 
 
 
@@ -59,6 +61,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     AtivosComponent,
     CabosComponent,
     FormCabosComponent,
+    VerCaboComponent,
+    DelCaboComponent,
   ],
   imports: [
     BrowserModule,

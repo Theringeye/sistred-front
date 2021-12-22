@@ -26,8 +26,8 @@ export class FormCabosComponent implements OnInit {
         this.service.mensagem(this.mensagemErro);      
     });
   }
-  remover(id: number){
-    console.log(id);
+  cancelar():void{
+    this.router.navigate(['cabos'])
   }
 
 }

@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AtivosComponent } from './views/ativos/ativos.component';
 import { CabosComponent } from './views/cabos/cabos.component';
+import { DelCaboComponent } from './views/cabos/del-cabo/del-cabo.component';
 import { FormCabosComponent } from './views/cabos/form-cabos/form-cabos.component';
+import { VerCaboComponent } from './views/cabos/ver-cabo/ver-cabo.component';
 import { FormAtivosComponent } from './views/forms/form-ativos/form-ativos.component';
 import { MovimentacoesComponent } from './views/movimentacoes/movimentacoes.component';
 import { PainelComponent } from './views/painel/painel.component';
@@ -39,6 +41,14 @@ const routes: Routes = [
   {
     path: 'form-cabo',
     component: FormCabosComponent
+  },
+  {
+    path: 'ver-cabo/:id',
+    component: VerCaboComponent
+  },
+  {
+    path: 'del-cabo/:id',
+    component: DelCaboComponent
   }
 ];
 
