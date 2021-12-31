@@ -1,88 +1,76 @@
-import { Component } from '@angular/core';
-import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
-import { FlatTreeControl } from '@angular/cdk/tree';
-import {NestedTreeControl} from '@angular/cdk/tree';
-import {MatTreeNestedDataSource} from '@angular/material/tree';
-import { Router } from '@angular/router';
+import { Component } from "@angular/core";
+import { NestedTreeControl } from "@angular/cdk/tree";
+import { MatTreeNestedDataSource } from "@angular/material/tree";
 
-/**
- * Food data with nested structure.
- * Each node has a name and an optional list of children.
- */
-interface FoodNode {
+
+interface Menu {
   name: string;
-  children?: FoodNode[];
+  children?: Menu[];
   link?: string;
 }
 
-const TREE_DATA: FoodNode[] = [
+const TREE_DATA: Menu[] = [
   {
-    name: 'PAINEL',
-    link: '/painel',
+    name: "PAINEL",
+    link: "/painel",
   },
   {
-    name: 'ATIVOS',
-    link: '',
+    name: "ATIVOS",
+    link: "",
     children: [
       {
-        name: 'CABOS',
-        link: '/cabos',
+        name: "CABOS",
+        link: "/cabos",
       },
       {
-        name: 'TECLADO',
-        link: '',
-        
+        name: "TECLADO",
+        link: "",
       },
     ],
   },
   {
-    name: 'MOVIMENTAÇÃO',
-    link: '',
+    name: "MOVIMENTAÇÃO",
+    link: "",
     children: [
       {
-        name: 'CADASTRAR',
-        link: '/form-movimentacoes',
+        name: "CADASTRAR",
+        link: "/form-movimentacoes",
       },
       {
-        name: 'LISTAR',
-        link: '/movimentacoes',
-        
+        name: "LISTAR",
+        link: "/movimentacoes",
       },
     ],
   },
   {
-    name: 'RELATÓRIO',
-    link: '',
+    name: "RELATÓRIO",
+    link: "",
     children: [
       {
-        name: 'ATIVO',
-        link: '',
+        name: "ATIVO",
+        link: "",
       },
       {
-        name: 'MOVIMENTACAO',
-        link: '',
-        
+        name: "MOVIMENTACAO",
+        link: "",
       },
     ],
   },
 ];
 
 @Component({
-  selector: 'app-navtree',
-  templateUrl: './navtree.component.html',
-  styleUrls: ['./navtree.component.css']
+  selector: "app-navtree",
+  templateUrl: "./navtree.component.html",
+  styleUrls: ["./navtree.component.css"],
 })
 export class NavtreeComponent {
-
-  treeControl = new NestedTreeControl<FoodNode>(node => node.children);
-  dataSource = new MatTreeNestedDataSource<FoodNode>();
+  treeControl = new NestedTreeControl<Menu>((node) => node.children);
+  dataSource = new MatTreeNestedDataSource<Menu>();
 
   constructor() {
     this.dataSource.data = TREE_DATA;
   }
 
- 
-  
-  hasChild = (_: number, node: FoodNode) => !!node.children && node.children.length > 0;
-
+  hasChild = (_: number, node: Menu) =>
+    !!node.children && node.children.length > 0;
 }
