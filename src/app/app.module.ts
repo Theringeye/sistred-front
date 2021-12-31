@@ -1,3 +1,4 @@
+import { NavtreeComponent } from './template/navtree/navtree.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -43,6 +44,7 @@ import { FormCabosComponent } from './views/cabos/form-cabos/form-cabos.componen
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { VerCaboComponent } from './views/cabos/ver-cabo/ver-cabo.component';
 import { DelCaboComponent } from './views/cabos/del-cabo/del-cabo.component';
+import {MatTreeModule} from '@angular/material/tree'
 
 
 
@@ -63,6 +65,7 @@ import { DelCaboComponent } from './views/cabos/del-cabo/del-cabo.component';
     FormCabosComponent,
     VerCaboComponent,
     DelCaboComponent,
+    NavtreeComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,7 +85,8 @@ import { DelCaboComponent } from './views/cabos/del-cabo/del-cabo.component';
     MatTabsModule,
     HttpClientModule,
     FormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTreeModule
     
   ],
   providers: [AuthGuard, HomeService, CabosService, LoginService,
