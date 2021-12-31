@@ -1,5 +1,20 @@
 <mat-toolbar>
-    <button mat-icon-button class="example-icon" aria-label="Icone de Menu">
-      </button>
-    <h1>Sistred</h1>
-  </mat-toolbar>
+  <h1>Sistred</h1>
+  <button
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    aria-label="icon-button with a menu"
+  >
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>dialpad</mat-icon>
+      <span>Configurações</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>power_off</mat-icon>
+      <span>Sair</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>

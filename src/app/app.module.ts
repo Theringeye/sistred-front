@@ -45,6 +45,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { VerCaboComponent } from './views/cabos/ver-cabo/ver-cabo.component';
 import { DelCaboComponent } from './views/cabos/del-cabo/del-cabo.component';
 import {MatTreeModule} from '@angular/material/tree'
+import {MatMenuModule} from '@angular/material/menu';
 
 
 
@@ -86,7 +87,8 @@ import {MatTreeModule} from '@angular/material/tree'
     HttpClientModule,
     FormsModule,
     MatSnackBarModule,
-    MatTreeModule
+    MatTreeModule,
+    MatMenuModule,
     
   ],
   providers: [AuthGuard, HomeService, CabosService, LoginService,
