@@ -1,4 +1,11 @@
-<h1>Detalhe do Ativo - Cabo</h1>
+<nav class="col-md-12">
+    <ol class="breadcrumb">
+      <li><a>Ativos</a></li>
+      <li><a>Cabo</a></li>
+      <li>Editar</li>
+    </ol>
+  </nav>
+<h1>Alterar</h1>
 <mat-divider></mat-divider>
 <br>
     <mat-card>
@@ -19,7 +26,7 @@
             </mat-form-field> 
         </mat-card-content>
         <mat-card-actions>
+            <button (click)="voltar()" mat-raised-button color="warn">Voltar</button>
             <button (click)="alterar()" mat-raised-button color="primary">Alterar</button>
-            <button (click)="remover()" mat-raised-button color="warn">Remover</button>
         </mat-card-actions>
     </mat-card>

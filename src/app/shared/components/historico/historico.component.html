@@ -1,0 +1,37 @@
+
+ <div class="novo">
+<button (click)="adicionar()" mat-raised-button color="primary">Novo</button>
+</div>
+
+<mat-divider></mat-divider>
+
+<div class="container">
+<div class="lista">
+    <h2>Histórico</h2>
+    <!--
+        Lista de todos os cabos
+    -->
+     
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        
+        <ng-container matColumnDef="Situacao">
+            <th mat-header-cell *matHeaderCellDef> Situacao </th>
+            <td mat-cell *matCellDef="let historico"> {{historico.situacao}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Data">
+            <th mat-header-cell *matHeaderCellDef> Data </th>
+            <td mat-cell *matCellDef="let historico"> {{historico.data}} </td>
+        </ng-container>
+        
+        
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-card>
+    <mat-card-actions>
+        <button (click)="voltar()" mat-raised-button color="warn">Voltar</button>
+    </mat-card-actions>
+   </mat-card>
+</div>
+</div>

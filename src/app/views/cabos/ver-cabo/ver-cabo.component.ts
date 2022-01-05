@@ -40,5 +40,9 @@ export class VerCaboComponent implements OnInit {
     this.router.navigate(["del-cabo/"+this.ativo.id])
   }
 
+  voltar(){
+    this.router.navigate(["cabos"])
+  }
+
 
 }

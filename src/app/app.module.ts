@@ -1,3 +1,4 @@
+import { SharedModule } from './shared/shared.module';
 import { NavtreeComponent } from './template/navtree/navtree.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -33,6 +34,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { FormAtivosComponent } from './views/forms/form-ativos/form-ativos.component';
 import { AtivosComponent } from './views/ativos/ativos.component';
 import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
@@ -46,6 +48,10 @@ import { VerCaboComponent } from './views/cabos/ver-cabo/ver-cabo.component';
 import { DelCaboComponent } from './views/cabos/del-cabo/del-cabo.component';
 import {MatTreeModule} from '@angular/material/tree'
 import {MatMenuModule} from '@angular/material/menu';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatDialogModule} from '@angular/material/dialog';
+import { HistoricoCaboComponent } from './views/cabos/historico-cabo/historico-cabo.component';
+
 
 
 
@@ -67,6 +73,9 @@ import {MatMenuModule} from '@angular/material/menu';
     VerCaboComponent,
     DelCaboComponent,
     NavtreeComponent,
+    HistoricoCaboComponent,
+    
+  
   ],
   imports: [
     BrowserModule,
@@ -79,6 +88,7 @@ import {MatMenuModule} from '@angular/material/menu';
     MatCardModule,
     MatDividerModule,
     MatTableModule,
+    MatPaginatorModule,
     MatFormFieldModule,
     MatButtonModule,
     MatInputModule,
@@ -89,6 +99,9 @@ import {MatMenuModule} from '@angular/material/menu';
     MatSnackBarModule,
     MatTreeModule,
     MatMenuModule,
+    MatTooltipModule,
+    MatDialogModule,
+    SharedModule,
     
   ],
   providers: [AuthGuard, HomeService, CabosService, LoginService,

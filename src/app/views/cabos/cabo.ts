@@ -1,7 +1,9 @@
+import { Historico } from "src/app/shared/model/historico";
+
 export class Cabo{
     id: number;
     tipo: string;
     fabricante: string;
-    listaMovimentacao?: string;
-    historicoDoAtivo?: string;
+    listaMovimentacaoDTO?: [];
+    listaHistoricoAtivoDTO?: Historico[];
 }

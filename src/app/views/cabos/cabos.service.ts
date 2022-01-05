@@ -11,6 +11,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 export class CabosService {
     
   recurso:string = environment.baseUrl.concat('cabo');
+  public cabo: Cabo;
   
   constructor(private http: HttpClient, private _snackBar: MatSnackBar) { }
   
@@ -41,7 +42,5 @@ export class CabosService {
       duration: 3000
     });
   }
-
-
 
 }

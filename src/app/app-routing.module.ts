@@ -1,3 +1,4 @@
+import { HistoricoCaboComponent } from './views/cabos/historico-cabo/historico-cabo.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AtivosComponent } from './views/ativos/ativos.component';
@@ -43,13 +44,18 @@ const routes: Routes = [
     component: FormCabosComponent
   },
   {
+    path: 'historico-cabo',
+    component: HistoricoCaboComponent
+  },
+  {
     path: 'ver-cabo/:id',
     component: VerCaboComponent
   },
   {
     path: 'del-cabo/:id',
     component: DelCaboComponent
-  }
+  },
+  
 ];
 
 @NgModule({
