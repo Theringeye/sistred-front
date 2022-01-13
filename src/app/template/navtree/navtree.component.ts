@@ -23,8 +23,8 @@ const TREE_DATA: Menu[] = [
         link: "/cabos",
       },
       {
-        name: "TECLADO",
-        link: "",
+        name: "TECLADOS",
+        link: "/teclados",
       },
     ],
   },

@@ -9,6 +9,7 @@ import { VerCaboComponent } from './views/cabos/ver-cabo/ver-cabo.component';
 import { FormAtivosComponent } from './views/forms/form-ativos/form-ativos.component';
 import { MovimentacoesComponent } from './views/movimentacoes/movimentacoes.component';
 import { PainelComponent } from './views/painel/painel.component';
+import { TecladosComponent } from './views/teclados/teclados.component';
 
 const routes: Routes = [
   {
@@ -55,6 +56,10 @@ const routes: Routes = [
     path: 'del-cabo/:id',
     component: DelCaboComponent
   },
+  {
+    path: 'teclados',
+    component: TecladosComponent
+  }
   
 ];
 
