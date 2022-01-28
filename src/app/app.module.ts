@@ -52,6 +52,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatDialogModule} from '@angular/material/dialog';
 import { HistoricoCaboComponent } from './views/cabos/historico-cabo/historico-cabo.component';
 import { TecladosComponent } from './views/teclados/teclados.component';
+import { FormTecladoComponent } from './views/teclados/form-teclado/form-teclado.component';
 
 
 
@@ -76,6 +77,7 @@ import { TecladosComponent } from './views/teclados/teclados.component';
     NavtreeComponent,
     HistoricoCaboComponent,
     TecladosComponent,
+    FormTecladoComponent,
     
   
   ],

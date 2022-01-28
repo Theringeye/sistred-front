@@ -10,6 +10,7 @@ import { FormAtivosComponent } from './views/forms/form-ativos/form-ativos.compo
 import { MovimentacoesComponent } from './views/movimentacoes/movimentacoes.component';
 import { PainelComponent } from './views/painel/painel.component';
 import { TecladosComponent } from './views/teclados/teclados.component';
+import { FormTecladoComponent } from './views/teclados/form-teclado/form-teclado.component';
 
 const routes: Routes = [
   {
@@ -59,6 +60,10 @@ const routes: Routes = [
   {
     path: 'teclados',
     component: TecladosComponent
+  },
+  {
+    path: 'form-teclado',
+    component: FormTecladoComponent
   }
   
 ];
