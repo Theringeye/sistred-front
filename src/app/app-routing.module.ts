@@ -1,3 +1,4 @@
+import { DelTecladoComponent } from './views/teclados/del-teclado/del-teclado.component';
 import { HistoricoCaboComponent } from './views/cabos/historico-cabo/historico-cabo.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -64,6 +65,10 @@ const routes: Routes = [
   {
     path: 'form-teclado',
     component: FormTecladoComponent
+  },
+  {
+    path: 'del-teclado/:id',
+    component: DelTecladoComponent
   }
   
 ];

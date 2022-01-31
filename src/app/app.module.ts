@@ -1,3 +1,4 @@
+import { TecladosService } from './views/teclados/teclados.service';
 import { SharedModule } from './shared/shared.module';
 import { NavtreeComponent } from './template/navtree/navtree.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -53,6 +54,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { HistoricoCaboComponent } from './views/cabos/historico-cabo/historico-cabo.component';
 import { TecladosComponent } from './views/teclados/teclados.component';
 import { FormTecladoComponent } from './views/teclados/form-teclado/form-teclado.component';
+import { DelTecladoComponent } from './views/teclados/del-teclado/del-teclado.component';
 
 
 
@@ -78,6 +80,7 @@ import { FormTecladoComponent } from './views/teclados/form-teclado/form-teclado
     HistoricoCaboComponent,
     TecladosComponent,
     FormTecladoComponent,
+    DelTecladoComponent,
     
   
   ],
@@ -108,7 +111,7 @@ import { FormTecladoComponent } from './views/teclados/form-teclado/form-teclado
     SharedModule,
     
   ],
-  providers: [AuthGuard, HomeService, CabosService, LoginService,
+  providers: [AuthGuard, HomeService, CabosService, LoginService, TecladosService,
     {provide: APP_BASE_HREF, useValue: '/' }, 
     {provide:  HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
     ],

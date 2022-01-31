@@ -1,3 +1,4 @@
+
 import {
   Component,
   OnInit,
@@ -9,9 +10,10 @@ import {
 } from "@angular/material/dialog";
 import { Router } from "@angular/router";
 import { DelCaboComponent } from "src/app/views/cabos/del-cabo/del-cabo.component";
+import { DelTecladoComponent } from 'src/app/views/teclados/del-teclado/del-teclado.component';
 
 @Component({
-  providers: [DelCaboComponent],
+  providers: [DelCaboComponent, DelTecladoComponent],
   selector: "app-form-dialog",
   templateUrl: "./del-dialog.component.html",
   styleUrls: ["./del-dialog.component.css"],
@@ -23,17 +25,19 @@ export class DelDialogComponent implements OnInit {
     public dialogRef: MatDialogRef<DelDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data,
     private router: Router,
-    private caboComponente: DelCaboComponent
+    private caboComponente: DelCaboComponent,
+    private tecladoComponente: DelTecladoComponent
   ) {}
 
   sim(): void {
     if (this.data.nomeComponente == "cabos") {
-      this.caboComponente.remover(this.data.ativo);
-      this.recarregaComponente();
-      this.dialogRef.close();
-    } else if (this.data.nomeComponente == "teclado") {
+      this.caboComponente.remover(this.data.ativo);     
+    } else if (this.data.nomeComponente == "teclados") {
+      this.tecladoComponente.remover(this.data.ativo); 
     } else if (this.data.nomeComponente == "monitor") {
     }
+    this.recarregaComponente();
+    this.dialogRef.close();
   }
 
   nao() {
