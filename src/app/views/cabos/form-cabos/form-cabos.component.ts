@@ -1,3 +1,4 @@
+import { MensagemService } from 'src/app/shared/service/mensagem.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Cabo } from '../cabo';
@@ -9,9 +10,7 @@ import { CabosService } from '../cabos.service';
   styleUrls: ['./form-cabos.component.css']
 })
 export class FormCabosComponent implements OnInit {
-  mensagemSucesso = "Ativo cadastrado com sucesso!";
-  mensagemErro = "Ativo não foi cadastrado!";
-  mensagemDadosIncompletos = "Preencha todos os campos antes de inserir!";
+
   cabo: Cabo = new Cabo();
 
   tipos: string[] = [
@@ -30,14 +29,14 @@ export class FormCabosComponent implements OnInit {
     if(this.cabo == null || this.cabo.tipo == null || this.cabo.fabricante == null
       ||  this.cabo.fabricante === ''){
 
-      this.service.mensagem(this.mensagemDadosIncompletos);
+      this.service.mostrarMensagem(MensagemService.msgDadosIncompletos);
 
     }else{
     this.service.salvar(this.cabo).subscribe((resposta)=>{
       this.router.navigate(['cabos'])
-      this.service.mensagem(this.mensagemSucesso)
+      this.service.mostrarMensagem(MensagemService.msgAtivoCadastroSucesso);
     }, err => {      
-        this.service.mensagem(this.mensagemErro);      
+        this.service.mostrarMensagem(MensagemService.msgAtivoNaoCadastrado);      
     });
   }
   }

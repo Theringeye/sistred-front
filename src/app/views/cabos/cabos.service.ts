@@ -35,7 +35,7 @@ export class CabosService {
     return this.http.post<Cabo>(this.recurso, ativo);
   }
 
-  mensagem(msg: string){
+  mostrarMensagem(msg: string){
     this._snackBar.open(msg,"Fechar",{
       horizontalPosition: "end",
       verticalPosition: "top",

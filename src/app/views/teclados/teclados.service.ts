@@ -11,8 +11,7 @@ import { Teclado } from "./teclado";
 export class TecladosService{
   
   recurso:string = environment.baseUrl.concat('teclado');
-  public teclado: Teclado;
-  
+   
   constructor(private http: HttpClient, private _snackBar: MatSnackBar) { }
   
   findAll():Observable<Teclado[]>{
@@ -35,8 +34,8 @@ export class TecladosService{
     return this.http.post<Teclado>(this.recurso, ativo);
   }
 
-  mensagem(msg: string){
-    this._snackBar.open(msg,"Fechar",{
+  mostarMensagem(mensagem:string){        
+    this._snackBar.open(mensagem,"Fechar",{
       horizontalPosition: "end",
       verticalPosition: "top",
       duration: 3000

@@ -55,6 +55,7 @@ import { HistoricoCaboComponent } from './views/cabos/historico-cabo/historico-c
 import { TecladosComponent } from './views/teclados/teclados.component';
 import { FormTecladoComponent } from './views/teclados/form-teclado/form-teclado.component';
 import { DelTecladoComponent } from './views/teclados/del-teclado/del-teclado.component';
+import { VerTecladoComponent } from './views/teclados/ver-teclado/ver-teclado.component';
 
 
 
@@ -81,6 +82,7 @@ import { DelTecladoComponent } from './views/teclados/del-teclado/del-teclado.co
     TecladosComponent,
     FormTecladoComponent,
     DelTecladoComponent,
+    VerTecladoComponent,
     
   
   ],

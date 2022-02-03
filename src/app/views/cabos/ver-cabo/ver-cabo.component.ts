@@ -1,3 +1,4 @@
+import { MensagemService } from 'src/app/shared/service/mensagem.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Cabo } from '../cabo';
@@ -6,41 +7,38 @@ import { CabosService } from '../cabos.service';
 @Component({
   selector: 'app-ver-cabo',
   templateUrl: './ver-cabo.component.html',
-  styleUrls: ['./ver-cabo.component.css']
+  styleUrls: ['./ver-cabo.component.css', '../../../shared/css/main.css', '../../../shared/css/form.css']
 })
 export class VerCaboComponent implements OnInit {
 
   ativo: Cabo = new Cabo();
-  paramId: string = "";
-  mensagemSucesso = "Ativo alterado com sucesso!";
-  mensagemErro = "Ativo não foi alterado!";
 
   constructor(private service: CabosService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    this.paramId = this.route.snapshot.params.id
-    this.service.findById(this.paramId).subscribe(resposta =>{
+    const paramId = this.route.snapshot.params.id
+    this.service.findById(paramId).subscribe(resposta =>{
       this.ativo.id = resposta.id
       this.ativo.fabricante = resposta.fabricante
       this.ativo.tipo = resposta.tipo
     })
   }
 
-  alterar(){
-    console.log("cabo alterado " + this.ativo.id)
-    this.service.alterar(this.ativo).subscribe(resposta=>{
-      this.router.navigate(['cabos'])
-      this.service.mensagem(this.mensagemSucesso)
-    }, err =>{
-      this.service.mensagem(this.mensagemErro)
-    });
+  alterar(){   
+    this.service.alterar(this.ativo).subscribe(
+      {
+        next: () =>  this.service.mostrarMensagem(MensagemService.msgAtivoAlteradoSucesso),
+        error: (e) => this.service.mostrarMensagem(MensagemService.msgAtivoNaoCadastrado + e),
+        complete: () => this.router.navigate(['cabos'])
+      }
+    );
   }
 
   remover(){
     this.router.navigate(["del-cabo/"+this.ativo.id])
   }
 
-  voltar(){
+  cancelar(){
     this.router.navigate(["cabos"])
   }
 

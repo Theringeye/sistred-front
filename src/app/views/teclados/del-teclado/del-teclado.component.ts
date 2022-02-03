@@ -1,3 +1,4 @@
+import { MensagemService } from 'src/app/shared/service/mensagem.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { TecladosService } from '../teclados.service';
@@ -10,12 +11,8 @@ import { Teclado } from './../teclado';
 })
 export class DelTecladoComponent implements OnInit {
 
+  private navigateUrl = "teclados";
   ativo: Teclado = new Teclado();
-  paramId: string = "";
-  mensagemSucesso = "Ativo removido com sucesso!";
-  mensagemErro = "Ativo não foi removido!";
-  mensagemPossuiMovimentacao = "Ativo vinculado a movimentação";
-  navigateUrl = "teclados";
 
   constructor(
     private service: TecladosService,
@@ -24,8 +21,8 @@ export class DelTecladoComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.paramId = this.route.snapshot.params.id;
-    this.service.findById(this.paramId).subscribe((resposta) => {
+    const paramId = this.route.snapshot.params.id;
+    this.service.findById(paramId).subscribe((resposta) => {
       this.ativo.id = resposta.id;
       this.ativo.patrimonio = resposta.patrimonio;
       this.ativo.modelo = resposta.modelo;
@@ -42,15 +39,13 @@ export class DelTecladoComponent implements OnInit {
     console.log("removido teclado id:" + teclado.id);
 
     if (teclado.listaMovimentacaoDTO.length > 0) {
-      this.service.mensagem(this.mensagemPossuiMovimentacao);
+      this.service.mostarMensagem(MensagemService.msgAtivoVinculadoMovimentacao);
     } else {
       this.service.remover(teclado.id).subscribe(
-        (resposta) => {
-          this.router.navigate([this.navigateUrl]);
-          this.service.mensagem(this.mensagemSucesso);
-        },
-        (err) => {
-          this.service.mensagem(this.mensagemErro);
+        {
+          next: () => this.service.mostarMensagem(MensagemService.msgAtivoRemovidoSucesso),
+          error: (e) => this.service.mostarMensagem(MensagemService.msgAtivoNaoRemovido+e),
+          complete: () => this.router.navigate([this.navigateUrl])
         }
       );
     }

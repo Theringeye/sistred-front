@@ -1,3 +1,4 @@
+import { MensagemService } from 'src/app/shared/service/mensagem.service';
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Cabo } from "../cabo";
@@ -11,9 +12,7 @@ import { CabosService } from "../cabos.service";
 export class DelCaboComponent implements OnInit {
   ativo: Cabo = new Cabo();
   paramId: string = "";
-  mensagemSucesso = "Ativo removido com sucesso!";
-  mensagemErro = "Ativo não foi removido!";
-  mensagemPossuiMovimentacao = "Ativo vinculado a movimentação";
+ 
 
   constructor(
     private service: CabosService,
@@ -38,15 +37,15 @@ export class DelCaboComponent implements OnInit {
     console.log("removido cabo id:" + cabo.id);
 
     if (cabo.listaMovimentacaoDTO.length > 0) {
-      this.service.mensagem(this.mensagemPossuiMovimentacao);
+      this.service.mostrarMensagem(MensagemService.msgAtivoVinculadoMovimentacao);
     } else {
       this.service.remover(cabo.id).subscribe(
         (resposta) => {
           this.router.navigate(["cabos"]);
-          this.service.mensagem(this.mensagemSucesso);
+          this.service.mostrarMensagem(MensagemService.msgAtivoRemovidoSucesso);
         },
         (err) => {
-          this.service.mensagem(this.mensagemErro);
+          this.service.mostrarMensagem(MensagemService.msgAtivoNaoRemovido);
         }
       );
     }
