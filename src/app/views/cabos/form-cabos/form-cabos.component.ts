@@ -12,6 +12,7 @@ import { CabosService } from '../cabos.service';
 export class FormCabosComponent implements OnInit {
 
   cabo: Cabo = new Cabo();
+  
 
   tipos: string[] = [
     'Americano',

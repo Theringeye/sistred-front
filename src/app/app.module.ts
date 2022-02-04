@@ -17,6 +17,7 @@ import { MovimentacoesComponent } from './views/movimentacoes/movimentacoes.comp
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatTabsModule} from '@angular/material/tabs';
 
+
 import { HomeService } from './views/home/home.service';
 import { CabosService } from './views/cabos/cabos.service';
 import { LoginService } from './views/login/login.service';
@@ -56,6 +57,8 @@ import { TecladosComponent } from './views/teclados/teclados.component';
 import { FormTecladoComponent } from './views/teclados/form-teclado/form-teclado.component';
 import { DelTecladoComponent } from './views/teclados/del-teclado/del-teclado.component';
 import { VerTecladoComponent } from './views/teclados/ver-teclado/ver-teclado.component';
+import {CheckboxModule} from 'primeng/checkbox'
+import {CalendarModule} from 'primeng/calendar';
 
 
 
@@ -111,6 +114,8 @@ import { VerTecladoComponent } from './views/teclados/ver-teclado/ver-teclado.co
     MatTooltipModule,
     MatDialogModule,
     SharedModule,
+    CheckboxModule,
+    CalendarModule,
     
   ],
   providers: [AuthGuard, HomeService, CabosService, LoginService, TecladosService,
