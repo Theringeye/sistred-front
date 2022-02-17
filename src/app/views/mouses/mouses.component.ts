@@ -17,7 +17,7 @@ import { MousesService } from './mouses.service';
 export class MousesComponent implements OnInit {
 
   dataSource: MatTableDataSource<Mouse>;
-  displayedColumns: string[] = ["patrimonio", "modelo", "fabricante", "codigo", "acoes"];
+  displayedColumns: string[] = ["patrimonio", "codigo", "modelo", "fabricante", "acoes"];
   servicoModel: MousesService;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

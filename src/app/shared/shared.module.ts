@@ -1,3 +1,4 @@
+import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { DataService } from './service/data.service';
 import { MatTableModule } from '@angular/material/table';
@@ -10,6 +11,9 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -27,9 +31,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatDividerModule,
   ],
   exports:[
+    
+    MatIconModule,
+    MatCardModule,
+    MatInputModule,
     MatButtonModule,
     MatPaginatorModule,
     MatTableModule,
+    MatTabsModule,    
+    MatSelectModule,
     MatFormFieldModule,
     MatDividerModule, 
     DelDialogComponent, 

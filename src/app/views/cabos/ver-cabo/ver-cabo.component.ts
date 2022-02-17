@@ -7,7 +7,7 @@ import { CabosService } from '../cabos.service';
 @Component({
   selector: 'app-ver-cabo',
   templateUrl: './ver-cabo.component.html',
-  styleUrls: ['./ver-cabo.component.css', '../../../shared/css/main.css', '../../../shared/css/form.css']
+  styleUrls: ['./ver-cabo.component.css']
 })
 export class VerCaboComponent implements OnInit {
 

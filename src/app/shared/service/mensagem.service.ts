@@ -19,5 +19,13 @@ export class MensagemService {
   static msgAtivoVinculadoMovimentacao: string = "Não foi possível realizar operação. Ativo vinculado a movimentação";
   static msgDadosIncompletos: string = "Preencha todos os campos antes de inserir!";
 
-  constructor() { }
+  constructor(private _snackBar: MatSnackBar) { }
+
+  mostraMensagem(mensagem:string){
+    this._snackBar.open(mensagem,"Fechar",{
+      horizontalPosition: "end",
+      verticalPosition: "top",
+      duration: 3000
+    });
+  }
 }

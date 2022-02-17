@@ -31,30 +31,34 @@
         <table mat-table [dataSource]="dataSource" matSort>
           <ng-container matColumnDef="patrimonio">
             <th mat-header-cell *matHeaderCellDef>Patrimônio</th>
-            <td mat-cell *matCellDef="let teclado">{{ teclado.patrimonio}}</td>
+            <td mat-cell *matCellDef="let mouse">{{ mouse.patrimonio}}</td>
+          </ng-container>     
+          <ng-container matColumnDef="codigo">
+            <th mat-header-cell *matHeaderCellDef>Código</th>
+            <td mat-cell *matCellDef="let mouse">{{ mouse.codigo_identificacao}}</td>
           </ng-container>     
           <ng-container matColumnDef="modelo">
             <th mat-header-cell *matHeaderCellDef>Modelo</th>
-            <td mat-cell *matCellDef="let teclado">{{ teclado.modelo }}</td>
+            <td mat-cell *matCellDef="let mouse">{{ mouse.modelo }}</td>
           </ng-container>     
           <ng-container matColumnDef="fabricante">
             <th mat-header-cell *matHeaderCellDef>Fabricante</th>
-            <td mat-cell *matCellDef="let teclado">{{ teclado.fabricante }}</td>
+            <td mat-cell *matCellDef="let mouse">{{ mouse.fabricante }}</td>
           </ng-container>     
           <ng-container matColumnDef="padrao">
             <th mat-header-cell *matHeaderCellDef>Padrão</th>
-            <td mat-cell *matCellDef="let teclado">{{ teclado.padrao }}</td>
+            <td mat-cell *matCellDef="let mouse">{{ mouse.padrao }}</td>
           </ng-container>        
   
           <ng-container matColumnDef="acoes">
             <th mat-header-cell *matHeaderCellDef>Ações</th>
-            <td mat-cell *matCellDef="let teclado">
+            <td mat-cell *matCellDef="let mouse">
               <a
                 matTooltip="Editar"
                 [matTooltipPosition]="'below'"
-                aria-label="Editar teclado"
+                aria-label="Editar mouse"
                 class="vermais"
-                (click)="verMais(teclado.id)"
+                (click)="verMais(mouse.id)"
               >
                 <mat-icon>edit</mat-icon>
               </a>
@@ -72,7 +76,7 @@
                 [matTooltipPosition]="'below'"
                 aria-label="Historico teclado"
                 class="vermais"
-                (click)="verHistorico(teclado)"
+                (click)="verHistorico(mouse)"
               >
                 <mat-icon>description</mat-icon>
               </a>
