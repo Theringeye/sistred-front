@@ -26,6 +26,10 @@ const TREE_DATA: Menu[] = [
         name: "TECLADOS",
         link: "/teclados",
       },
+      {
+        name: "MOUSES",
+        link: "/mouses",
+      },
     ],
   },
   {

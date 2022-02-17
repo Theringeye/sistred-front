@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-ver-teclado',
   templateUrl: './ver-teclado.component.html',
-  styleUrls: ['./ver-teclado.component.css', '../../../shared/css/form.css', '../../../shared/css/main.css']
+  styleUrls: ['./ver-teclado.component.css']
 })
 export class VerTecladoComponent implements OnInit {
   private url = 'teclados';

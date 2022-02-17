@@ -1,3 +1,5 @@
+import { TecladosModule } from './views/teclados/teclados.module';
+import { MousesModule } from './views/mouses/mouses.module';
 import { TecladosService } from './views/teclados/teclados.service';
 import { SharedModule } from './shared/shared.module';
 import { NavtreeComponent } from './template/navtree/navtree.component';
@@ -97,12 +99,10 @@ import {CalendarModule} from 'primeng/calendar';
     MatIconModule,
     MatSidenavModule,
     MatListModule,
-    MatCardModule,
-    MatDividerModule,
-    MatTableModule,
+    MatCardModule,   
     MatPaginatorModule,
     MatFormFieldModule,
-    MatButtonModule,
+    
     MatInputModule,
     MatSelectModule,
     MatTabsModule,
@@ -116,6 +116,8 @@ import {CalendarModule} from 'primeng/calendar';
     SharedModule,
     CheckboxModule,
     CalendarModule,
+    MousesModule,
+    TecladosModule
     
   ],
   providers: [AuthGuard, HomeService, CabosService, LoginService, TecladosService,

@@ -2,3 +2,87 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/*
+--MAIN--
+*/
+
+
+.breadcrumb {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 0.75rem 1rem;
+    margin-bottom: 4rem;
+    margin-top: 0.01rem;
+    list-style: none;
+    background-color: #e9ecef;
+    border-radius: 0.25rem;
+}
+
+.breadcrumb-item {
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 5px;
+}
+
+.col-md-12 {
+    position: relative;
+    width: 100%;
+    
+}
+
+
+:root{
+    --cor-principal: rgb(219, 43, 43);
+    --cor-secundaria: rgb(31, 12, 116);
+    --cor-cinza: color: #666;
+    }
+    
+    nav{
+    width: 100%;
+    }
+    
+    nav ol{
+    list-style-type: none;
+    }
+    
+    nav ol li{
+    display: inline;
+    font-family: Segoe ui;  
+    }
+    
+    nav ol li:after{
+    content: '/';
+    margin-right: 10px;
+    font-size: .8em;
+    color: #666;
+    }
+    
+    nav ol li:last-child::after{
+    content: '';
+    color: #666;
+    }
+    
+    nav ol li a{
+    color: rgb(219, 43, 43);;
+    text-decoration: none;
+    margin-right: 10px;      
+    }
+    
+    nav ol li a:hover{
+    color: rgb(31, 12, 116);
+    text-decoration: underline;           
+    }
+
+
+    /*
+--FORM--
+*/
+#form-id{
+    display: none;
+}
+mat-form-field{
+    margin: .8em;
+}

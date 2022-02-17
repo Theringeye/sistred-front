@@ -8,7 +8,7 @@ import { TecladosService } from '../teclados.service';
 @Component({
   selector: 'app-form-teclado',
   templateUrl: './form-teclado.component.html',
-  styleUrls: ['./form-teclado.component.css', '../../../shared/css/main.css', '../../../shared/css/form.css']
+  styleUrls: ['./form-teclado.component.css']
 })
 export class FormTecladoComponent implements OnInit {
   
