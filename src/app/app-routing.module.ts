@@ -16,14 +16,8 @@ import { TecladosComponent } from './views/teclados/teclados.component';
 import { FormTecladoComponent } from './views/teclados/form-teclado/form-teclado.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: PainelComponent
-  },
-  {
-    path: 'painel',
-    component: PainelComponent
-  },
+  { path: '', pathMatch: 'full', redirectTo: 'painel' },
+  { path: 'painel', component: PainelComponent },
   {
     path: 'ativos',
     component: AtivosComponent

@@ -17,7 +17,7 @@ import { MousesService } from './mouses.service';
 export class MousesComponent implements OnInit {
 
   dataSource: MatTableDataSource<Mouse>;
-  displayedColumns: string[] = ["patrimonio", "codigo", "modelo", "fabricante", "acoes"];
+  displayedColumns: string[] = ["codigo", "modelo", "fabricante", "acoes"];
   servicoModel: MousesService;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -82,10 +82,10 @@ export class MousesComponent implements OnInit {
 
   verHistorico(mouse: Mouse) {
     this.router.navigate(["historico-mouse"]);
-    this.goTomouseByServiço(mouse);
+    this.goToMouseByServico(mouse);
   }
 
-  goTomouseByServiço(mouse: Mouse) {
+  goToMouseByServico(mouse: Mouse) {
     this.dataService.setDataAtivo(mouse);
     this.dataService.setDataSeletorComponente("mouses");
   }

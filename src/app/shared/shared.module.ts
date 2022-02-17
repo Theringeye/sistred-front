@@ -14,6 +14,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatDividerModule,
   ],
   exports:[
-    
+    FormsModule,
     MatIconModule,
     MatCardModule,
     MatInputModule,

@@ -96,7 +96,6 @@ import {CalendarModule} from 'primeng/calendar';
     AppRoutingModule,
     BrowserAnimationsModule,   
     HttpClientModule,
-    FormsModule,
     CheckboxModule,
     CalendarModule,
     MatMenuModule,

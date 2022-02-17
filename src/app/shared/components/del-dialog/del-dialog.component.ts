@@ -1,3 +1,4 @@
+import { MousesComponent } from './../../../views/mouses/mouses.component';
 
 import {
   Component,
@@ -26,7 +27,7 @@ export class DelDialogComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data,
     private router: Router,
     private caboComponente: DelCaboComponent,
-    private tecladoComponente: DelTecladoComponent
+    private tecladoComponente: DelTecladoComponent,
   ) {}
 
   sim(): void {
@@ -35,6 +36,8 @@ export class DelDialogComponent implements OnInit {
     } else if (this.data.nomeComponente == "teclados") {
       this.tecladoComponente.remover(this.data.ativo); 
     } else if (this.data.nomeComponente == "monitor") {
+    } else if (this.data.nomeComponente == "mouses"){
+     
     }
     this.recarregaComponente();
     this.dialogRef.close();

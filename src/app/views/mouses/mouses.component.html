@@ -13,7 +13,7 @@
     </div>
     <mat-divider></mat-divider>
     <div class="lista">
-      <h2>Todos os Teclados</h2>
+      <h2>Todos os Mouses</h2>
       <!--
               Lista de todos os teclados
           -->
@@ -28,11 +28,7 @@
       </mat-form-field>
   
       <div class="mat-elevation-z8">
-        <table mat-table [dataSource]="dataSource" matSort>
-          <ng-container matColumnDef="patrimonio">
-            <th mat-header-cell *matHeaderCellDef>Patrimônio</th>
-            <td mat-cell *matCellDef="let mouse">{{ mouse.patrimonio}}</td>
-          </ng-container>     
+        <table mat-table [dataSource]="dataSource" matSort>        
           <ng-container matColumnDef="codigo">
             <th mat-header-cell *matHeaderCellDef>Código</th>
             <td mat-cell *matCellDef="let mouse">{{ mouse.codigo_identificacao}}</td>
