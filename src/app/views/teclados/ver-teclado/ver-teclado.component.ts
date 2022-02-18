@@ -4,6 +4,7 @@ import { TecladosService } from './../teclados.service';
 import { Teclado } from './../teclado';
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-ver-teclado',
   templateUrl: './ver-teclado.component.html',
@@ -24,12 +25,20 @@ export class VerTecladoComponent implements OnInit {
     });
   }
 
+  validar(ativo: Teclado):boolean{
+    return ativo.patrimonio == null || ativo.patrimonio == "" ? false : true;
+  }
+
   alterar():void{
-    this.service.alterar(this.teclado).subscribe({
-      next: () => this.service.mostrarMensagem(MensagemService.msgAtivoAlteradoSucesso),        
-      error: (e) => this.service.mostrarMensagem(MensagemService.msgAtivoNaoAlterado+e),
-      complete: () => this.router.navigateByUrl(this.url)
-    });
+    if(this.validar(this.teclado)){
+      this.service.alterar(this.teclado).subscribe({
+        next: () => {this.service.mostrarMensagem(MensagemService.msgAtivoAlteradoSucesso)},
+        error: (e) => this.service.mostrarMensagem(MensagemService.msgAtivoNaoAlterado+e),
+        complete: () => this.router.navigateByUrl(this.url)
+      });
+    }else{
+        this.service.mostrarMensagem(MensagemService.msgDadosIncompletos);     
+    }        
   }
   
   cancelar():void{

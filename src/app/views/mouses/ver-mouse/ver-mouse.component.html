@@ -1,0 +1,39 @@
+
+<nav class="col-md-12">
+    <ol class="breadcrumb">
+      <li > <a>Ativos</a></li>
+      <li ><a>Mouses</a> </li>
+      <li >Alterar Mouse</li>
+    </ol>
+  </nav>
+
+<h1>Alterar Mouse</h1>
+<mat-divider></mat-divider>
+<br>
+    <mat-card>        
+        <mat-card-header>            
+        </mat-card-header>
+        <mat-card-content>
+            <mat-form-field id="form-id" appearance="fill" hidden>
+                <mat-label>ID</mat-label>
+                <input matInput [(ngModel)]="mouse.id">
+            </mat-form-field> 
+            <mat-form-field appearance="fill">
+                <mat-label>Código de Identificação</mat-label>
+                <input matInput [(ngModel)]="mouse.codigo_identificacao">
+            </mat-form-field> 
+            <mat-form-field appearance="fill">
+                <mat-label>Modelo</mat-label>
+                <input matInput [(ngModel)]="mouse.modelo">
+            </mat-form-field>   
+            <mat-form-field appearance="fill">
+                <mat-label>Fabricante</mat-label>
+                <input matInput [(ngModel)]="mouse.fabricante">
+            </mat-form-field> 
+        </mat-card-content>
+        <mat-card-actions>
+            <button (click)="alterar()" mat-raised-button color="primary">Alterar</button>
+            <button (click)="cancelar()" mat-raised-button color="warn">Cancelar</button>
+        </mat-card-actions>
+    
+    </mat-card>

@@ -7,6 +7,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { FormMouseComponent } from './form-mouse/form-mouse.component';
 import { DelMouseComponent } from './del-mouse/del-mouse.component';
 import { MousesService } from './mouses.service';
+import { VerMouseComponent } from './ver-mouse/ver-mouse.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { MousesService } from './mouses.service';
     MousesComponent,
     FormMouseComponent,
     DelMouseComponent,
+    VerMouseComponent,
   ],
   imports: [
     CommonModule,

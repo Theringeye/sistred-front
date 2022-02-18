@@ -2,7 +2,7 @@ import { Common } from "src/app/shared/model/common";
 import { Historico } from "src/app/shared/model/historico";
 
 export class Mouse extends Common {
-    codigo_identificacao?: number;
+    codigo_identificacao?: string;
     listaMovimentacaoDTO?: [];
     listaHistoricoAtivoDTO?: Historico[];
 }

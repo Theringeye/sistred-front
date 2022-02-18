@@ -21,7 +21,7 @@ export class FormMouseComponent implements OnInit {
   }
 
   validar(ativo:Mouse):boolean{
-    return ativo.codigo_identificacao == null ? false : true;
+    return ativo.codigo_identificacao == null || ativo.codigo_identificacao == "" ? false : true;
   }
 
   salvar(){
