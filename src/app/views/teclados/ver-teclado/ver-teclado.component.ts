@@ -26,8 +26,8 @@ export class VerTecladoComponent implements OnInit {
 
   alterar():void{
     this.service.alterar(this.teclado).subscribe({
-      next: () => this.service.mostarMensagem(MensagemService.msgAtivoAlteradoSucesso),        
-      error: (e) => this.service.mostarMensagem(MensagemService.msgAtivoNaoAlterado+e),
+      next: () => this.service.mostrarMensagem(MensagemService.msgAtivoAlteradoSucesso),        
+      error: (e) => this.service.mostrarMensagem(MensagemService.msgAtivoNaoAlterado+e),
       complete: () => this.router.navigateByUrl(this.url)
     });
   }

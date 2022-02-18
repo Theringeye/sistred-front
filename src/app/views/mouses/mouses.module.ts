@@ -5,18 +5,22 @@ import { MousesRoutingModule } from './mouses-routing.module';
 import { MousesComponent } from './mouses.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { FormMouseComponent } from './form-mouse/form-mouse.component';
+import { DelMouseComponent } from './del-mouse/del-mouse.component';
+import { MousesService } from './mouses.service';
 
 
 @NgModule({
   declarations: [
     MousesComponent,
-    FormMouseComponent
+    FormMouseComponent,
+    DelMouseComponent,
   ],
   imports: [
     CommonModule,
-    MousesRoutingModule,
     SharedModule,
+    MousesRoutingModule,    
   ],
-  exports: [MousesComponent]
+  exports: [],
+  providers: [DelMouseComponent]
 })
 export class MousesModule { }

@@ -1,3 +1,4 @@
+import { MousesService } from './views/mouses/mouses.service';
 import { TecladosModule } from './views/teclados/teclados.module';
 import { MousesModule } from './views/mouses/mouses.module';
 import { TecladosService } from './views/teclados/teclados.service';
@@ -84,11 +85,6 @@ import {CalendarModule} from 'primeng/calendar';
     DelCaboComponent,
     NavtreeComponent,
     HistoricoCaboComponent,
-    TecladosComponent,
-    FormTecladoComponent,
-    DelTecladoComponent,
-    VerTecladoComponent,
-    
   
   ],
   imports: [
@@ -96,6 +92,7 @@ import {CalendarModule} from 'primeng/calendar';
     AppRoutingModule,
     BrowserAnimationsModule,   
     HttpClientModule,
+    SharedModule,
     CheckboxModule,
     CalendarModule,
     MatMenuModule,
@@ -105,12 +102,13 @@ import {CalendarModule} from 'primeng/calendar';
     MatSnackBarModule,
     MatTreeModule,   
     MatDialogModule,
-    SharedModule,
     MousesModule,
-    TecladosModule
+    TecladosModule,
+   
+    
     
   ],
-  providers: [AuthGuard, HomeService, CabosService, LoginService, TecladosService,
+  providers: [AuthGuard, HomeService, CabosService, LoginService,
     {provide: APP_BASE_HREF, useValue: '/' }, 
     {provide:  HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
     ],

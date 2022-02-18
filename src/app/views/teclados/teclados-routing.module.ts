@@ -15,10 +15,6 @@ const routes: Routes = [
     component: FormTecladoComponent
   },
   {
-    path: 'del-teclado/:id',
-    component: DelTecladoComponent
-  },
-  {
     path: 'ver-teclado/:id',
     component: VerTecladoComponent
   },

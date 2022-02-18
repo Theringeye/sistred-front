@@ -35,7 +35,7 @@ export class MousesService {
     return this.http.post<Mouse>(RECURSOAPI, ativo);
   }
 
-  mostarMensagem(mensagem:string){        
+  mostrarMensagem(mensagem:string){        
     this.mensagemService.mostraMensagem(mensagem);
   }
 }

@@ -1,21 +1,21 @@
-import { MensagemService } from 'src/app/shared/service/mensagem.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { MousesService } from './../mouses.service';
 import { Component, OnInit } from '@angular/core';
-import { TecladosService } from '../teclados.service';
-import { Teclado } from './../teclado';
+import { Mouse } from '../mouse';
+import { ActivatedRoute, Router } from '@angular/router';
+import { MensagemService } from 'src/app/shared/service/mensagem.service';
 
 @Component({
-  selector: 'app-del-teclado',
-  templateUrl: './del-teclado.component.html',
-  styleUrls: ['./del-teclado.component.css']
+  selector: 'app-del-mouse',
+  templateUrl: './del-mouse.component.html',
+  styleUrls: ['./del-mouse.component.css']
 })
-export class DelTecladoComponent implements OnInit {
+export class DelMouseComponent implements OnInit {
 
-  private navigateUrl = "teclados";
-  ativo: Teclado = new Teclado();
+  navigateUrl = "mouses";
+  ativo: Mouse = new Mouse();
 
   constructor(
-    private service: TecladosService,
+    private service: MousesService,
     private route: ActivatedRoute,
     private router: Router
   ) {}
@@ -27,7 +27,7 @@ export class DelTecladoComponent implements OnInit {
       this.ativo.patrimonio = resposta.patrimonio;
       this.ativo.modelo = resposta.modelo;
       this.ativo.fabricante = resposta.fabricante;
-      this.ativo.padrao = resposta.padrao;
+      this.ativo.codigo_identificacao = resposta.codigo_identificacao;
     });
   }
 
@@ -35,13 +35,13 @@ export class DelTecladoComponent implements OnInit {
     this.router.navigate([this.navigateUrl]);
   }
 
-  remover(teclado: Teclado) {
-    console.log("removido teclado id:" + teclado.id);
+  remover(mouse: Mouse) {
+    console.log("removido mouse id:" + mouse.id);
 
-    if (teclado.listaMovimentacaoDTO.length > 0) {
+    if (mouse.listaMovimentacaoDTO.length > 0) {
       this.service.mostrarMensagem(MensagemService.msgAtivoVinculadoMovimentacao);
     } else {
-      this.service.remover(teclado.id).subscribe(
+      this.service.remover(mouse.id).subscribe(
         {
           next: () => this.service.mostrarMensagem(MensagemService.msgAtivoRemovidoSucesso),
           error: (e) => this.service.mostrarMensagem(MensagemService.msgAtivoNaoRemovido+e),

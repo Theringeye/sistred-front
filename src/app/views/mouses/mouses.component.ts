@@ -50,6 +50,7 @@ export class MousesComponent implements OnInit {
   }
 
   openDialog(mouse: Mouse): void {
+    console.log(mouse)
     const dialogRef = this.dialog.open(DelDialogComponent, {
       width: "250px",
       data: {

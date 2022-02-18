@@ -1,6 +1,6 @@
+import { MensagemService } from './../../shared/service/mensagem.service';
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { MatSnackBar } from "@angular/material/snack-bar";
 import { Observable } from "rxjs";
 import { environment } from "src/environments/environment";
 import { Teclado } from "./teclado";
@@ -12,7 +12,7 @@ export class TecladosService{
   
   recurso:string = environment.baseUrl.concat('teclado');
    
-  constructor(private http: HttpClient, private _snackBar: MatSnackBar) { }
+  constructor(private http: HttpClient, private mensagemService: MensagemService) { }
   
   findAll():Observable<Teclado[]>{
     return this.http.get<Teclado[]>(this.recurso)
@@ -34,11 +34,7 @@ export class TecladosService{
     return this.http.post<Teclado>(this.recurso, ativo);
   }
 
-  mostarMensagem(mensagem:string){        
-    this._snackBar.open(mensagem,"Fechar",{
-      horizontalPosition: "end",
-      verticalPosition: "top",
-      duration: 3000
-    });
+  mostrarMensagem(mensagem:string){        
+    this.mensagemService.mostraMensagem(mensagem);
   }
 }

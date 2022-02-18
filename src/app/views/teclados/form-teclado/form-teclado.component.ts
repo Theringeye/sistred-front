@@ -30,13 +30,13 @@ export class FormTecladoComponent implements OnInit {
     if(this.ativoValidado){
       this.service.salvar(this.teclado).subscribe((resposta)=>{
         this.router.navigate(['teclados'])
-        this.service.mostarMensagem(MensagemService.msgAtivoCadastroSucesso);
+        this.service.mostrarMensagem(MensagemService.msgAtivoCadastroSucesso);
       }, err => {      
-          this.service.mostarMensagem(MensagemService.msgAtivoNaoCadastrado);      
+          this.service.mostrarMensagem(MensagemService.msgAtivoNaoCadastrado);      
       });     
 
     }else{
-      this.service.mostarMensagem(MensagemService.msgAtivoNaoAlteradoErro);
+      this.service.mostrarMensagem(MensagemService.msgAtivoNaoAlteradoErro);
     }
 }
 

@@ -1,5 +1,3 @@
-import { MousesComponent } from './../../../views/mouses/mouses.component';
-
 import {
   Component,
   OnInit,
@@ -11,7 +9,9 @@ import {
 } from "@angular/material/dialog";
 import { Router } from "@angular/router";
 import { DelCaboComponent } from "src/app/views/cabos/del-cabo/del-cabo.component";
+import { DelMouseComponent } from "src/app/views/mouses/del-mouse/del-mouse.component";
 import { DelTecladoComponent } from 'src/app/views/teclados/del-teclado/del-teclado.component';
+
 
 @Component({
   providers: [DelCaboComponent, DelTecladoComponent],
@@ -28,6 +28,7 @@ export class DelDialogComponent implements OnInit {
     private router: Router,
     private caboComponente: DelCaboComponent,
     private tecladoComponente: DelTecladoComponent,
+    private mouseComponente: DelMouseComponent,
   ) {}
 
   sim(): void {
@@ -37,8 +38,9 @@ export class DelDialogComponent implements OnInit {
       this.tecladoComponente.remover(this.data.ativo); 
     } else if (this.data.nomeComponente == "monitor") {
     } else if (this.data.nomeComponente == "mouses"){
-     
+      this.mouseComponente.remover(this.data.ativo);
     }
+
     this.recarregaComponente();
     this.dialogRef.close();
   }
