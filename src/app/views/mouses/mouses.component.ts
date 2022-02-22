@@ -1,10 +1,9 @@
+import { OpendialogService } from './../../shared/service/opendialog.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { DelDialogComponent } from 'src/app/shared/components/del-dialog/del-dialog.component';
 import { DataService } from 'src/app/shared/service/data.service';
 import { Mouse } from './mouse';
 import { MousesService } from './mouses.service';
@@ -41,8 +40,8 @@ export class MousesComponent implements OnInit {
   constructor(
     private service: MousesService,
     private router: Router,
-    public dialog: MatDialog,
-    public dataService: DataService
+    public dataService: DataService,
+    private opendialogService:OpendialogService,
   ) {}
 
   ngOnInit(): void {
@@ -50,18 +49,7 @@ export class MousesComponent implements OnInit {
   }
 
   openDialog(mouse: Mouse): void {
-    console.log(mouse)
-    const dialogRef = this.dialog.open(DelDialogComponent, {
-      width: "250px",
-      data: {
-        nomeComponente: "mouses",
-        ativo: mouse,
-      },
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log("A caixa de confirmação fechou.");
-    });
+    this.opendialogService.openDialog(mouse, "mouses");
   }
 
   findAll() {

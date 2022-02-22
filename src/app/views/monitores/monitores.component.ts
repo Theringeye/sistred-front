@@ -1,11 +1,9 @@
 import { OpendialogService } from './../../shared/service/opendialog.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { DelDialogComponent } from 'src/app/shared/components/del-dialog/del-dialog.component';
 import { DataService } from 'src/app/shared/service/data.service';
 import { Monitor } from './monitor';
 import { MonitoresService } from './monitores.service';
@@ -42,7 +40,6 @@ export class MonitoresComponent implements OnInit {
   constructor(
     private service: MonitoresService,
     private router: Router,
-    public dialog: MatDialog,
     public dataService: DataService,
     private opendialogService: OpendialogService,
   ) {}
@@ -51,7 +48,7 @@ export class MonitoresComponent implements OnInit {
     this.findAll();
   }
 
-  openDialog(monitor: Monitor, component: string): void {
+  openDialog(monitor: Monitor): void {
     this.opendialogService.openDialog(monitor, "monitores");
   }
 

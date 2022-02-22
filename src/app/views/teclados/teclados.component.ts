@@ -1,10 +1,9 @@
+import { OpendialogService } from './../../shared/service/opendialog.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { DelDialogComponent } from 'src/app/shared/components/del-dialog/del-dialog.component';
 import { DataService } from 'src/app/shared/service/data.service';
 import { Teclado } from './teclado';
 import { TecladosService } from './teclados.service';
@@ -41,8 +40,8 @@ export class TecladosComponent implements OnInit {
   constructor(
     private service: TecladosService,
     private router: Router,
-    public dialog: MatDialog,
-    public dataService: DataService
+    public dataService: DataService,
+    private opendialogService: OpendialogService
   ) {}
 
   ngOnInit(): void {
@@ -50,17 +49,7 @@ export class TecladosComponent implements OnInit {
   }
 
   openDialog(teclado: Teclado): void {
-    const dialogRef = this.dialog.open(DelDialogComponent, {
-      width: "250px",
-      data: {
-        nomeComponente: "teclados",
-        ativo: teclado,
-      },
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log("A caixa de confirmação fechou.");
-    });
+    this.opendialogService.openDialog(teclado, "teclados");
   }
 
   findAll() {
