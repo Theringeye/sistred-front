@@ -61,6 +61,10 @@ const routes: Routes = [
   {
     path: 'teclados',
     loadChildren: () => import('./views/teclados/teclados.module').then((m) => m.TecladosModule)
+  },
+  {
+    path: 'monitores',
+    loadChildren: () => import('./views/monitores/monitores.module').then((m) => m.MonitoresModule)
   }
   
 ];

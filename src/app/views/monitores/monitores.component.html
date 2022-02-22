@@ -1,0 +1,99 @@
+<div class="container">
+    <nav class="col-md-12">
+      <ol class="breadcrumb">
+        <li><a>Ativos</a></li>
+        <li>Monitores</li>
+      </ol>
+    </nav>
+  
+    <div class="novo">
+      <button (click)="irParaFormMonitor()" mat-flat-button color="primary">
+        Novo
+      </button>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="lista">
+      <h2>Todos os Monitores</h2>
+      <!--
+              Lista de todos os teclados
+          -->
+      <mat-form-field appearance="standard">
+        <mat-label>Filtro</mat-label>
+        <input
+          matInput
+          (keyup)="filtro($event)"
+          placeholder="Ex: abnt"
+          #input
+        />
+      </mat-form-field>
+  
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+          <ng-container matColumnDef="patrimonio">
+            <th mat-header-cell *matHeaderCellDef>Patrimônio</th>
+            <td mat-cell *matCellDef="let monitor">{{ monitor.patrimonio}}</td>
+          </ng-container>     
+          <ng-container matColumnDef="modelo">
+            <th mat-header-cell *matHeaderCellDef>Modelo</th>
+            <td mat-cell *matCellDef="let monitor">{{ monitor.modelo }}</td>
+          </ng-container>     
+          <ng-container matColumnDef="fabricante">
+            <th mat-header-cell *matHeaderCellDef>Fabricante</th>
+            <td mat-cell *matCellDef="let monitor">{{ monitor.fabricante }}</td>
+          </ng-container>     
+          <ng-container matColumnDef="tamanho">
+            <th mat-header-cell *matHeaderCellDef>Tamanho</th>
+            <td mat-cell *matCellDef="let monitor">{{ monitor.tamanho }}</td>
+          </ng-container>        
+  
+          <ng-container matColumnDef="acoes">
+            <th mat-header-cell *matHeaderCellDef>Ações</th>
+            <td mat-cell *matCellDef="let monitor">
+              <a
+                matTooltip="Editar"
+                [matTooltipPosition]="'below'"
+                aria-label="Editar monitor"
+                class="vermais"
+                (click)="verMais(monitor.id)"
+              >
+                <mat-icon>edit</mat-icon>
+              </a>
+              <a
+                matTooltip="Excluir"
+                [matTooltipPosition]="'below'"
+                aria-label="Excluir monitor"
+                (click)="openDialog(monitor)"
+              >
+                <mat-icon>delete_outline</mat-icon>
+              </a>
+  
+              <a
+                matTooltip="Histórico"
+                [matTooltipPosition]="'below'"
+                aria-label="Historico monitor"
+                class="vermais"
+                (click)="verHistorico(monitor)"
+              >
+                <mat-icon>description</mat-icon>
+              </a>
+            </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+          <!-- Row shown when there is no matching data. -->
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">
+              No data matching the filter "{{ input.value }}"
+            </td>
+          </tr>
+        </table>
+        <mat-paginator
+          [pageSizeOptions]="[5, 10, 25, 100]"
+          aria-label="Selecione a pagina"
+        >
+        </mat-paginator>
+        
+      </div>
+    </div>
+  </div>
+  

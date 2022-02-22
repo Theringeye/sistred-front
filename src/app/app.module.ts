@@ -62,6 +62,8 @@ import { DelTecladoComponent } from './views/teclados/del-teclado/del-teclado.co
 import { VerTecladoComponent } from './views/teclados/ver-teclado/ver-teclado.component';
 import {CheckboxModule} from 'primeng/checkbox'
 import {CalendarModule} from 'primeng/calendar';
+import { MonitoresModule } from './views/monitores/monitores.module';
+import { FormMonitorComponent } from './views/monitores/form-monitor/form-monitor.component';
 
 
 
@@ -85,7 +87,7 @@ import {CalendarModule} from 'primeng/calendar';
     DelCaboComponent,
     NavtreeComponent,
     HistoricoCaboComponent,
-  
+      
   ],
   imports: [
     BrowserModule,
@@ -104,6 +106,7 @@ import {CalendarModule} from 'primeng/calendar';
     MatDialogModule,
     MousesModule,
     TecladosModule,
+    MonitoresModule
    
     
     
