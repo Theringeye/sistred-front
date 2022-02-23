@@ -1,23 +1,25 @@
-import { OpendialogService } from './../../shared/service/opendialog.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/shared/service/data.service';
-import { Monitor } from './monitor';
-import { MonitoresService } from './monitores.service';
+import { OpendialogService } from 'src/app/shared/service/opendialog.service';
+import { Gabinete } from './gabinete';
+import { GabinetesService } from './gabinetes.service';
 
 @Component({
-  selector: 'app-monitores',
-  templateUrl: './monitores.component.html',
-  styleUrls: ['./monitores.component.css']
+  selector: 'app-gabinetes',
+  templateUrl: './gabinetes.component.html',
+  styleUrls: ['./gabinetes.component.css']
 })
-export class MonitoresComponent implements OnInit {
+export class GabinetesComponent implements OnInit {
 
-  dataSource: MatTableDataSource<Monitor>;
-  displayedColumns: string[] = ["patrimonio", "modelo", "fabricante", "tamanho", "acoes"];
-  servicoModel: MonitoresService;
+  dataSource: MatTableDataSource<Gabinete>;
+  displayedColumns: string[] = ["patrimonio", 
+      "processador","memoria","tipo_armazenamento","tamanho_armazenamento",
+      "sistema_operacional","versao_sistema_operacional", "acoes"];
+  servicoModel: GabinetesService;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -38,7 +40,7 @@ export class MonitoresComponent implements OnInit {
   }
 
   constructor(
-    private service: MonitoresService,
+    private service: GabinetesService,
     private router: Router,
     public dataService: DataService,
     private opendialogService: OpendialogService,
@@ -48,8 +50,8 @@ export class MonitoresComponent implements OnInit {
     this.findAll();
   }
 
-  openDialog(monitor: Monitor): void {
-    this.opendialogService.openDialog(monitor, "monitores");
+  openDialog(gabinete: Gabinete): void {
+    this.opendialogService.openDialog(gabinete, "gabinetes");
   }
 
   findAll() {
@@ -61,22 +63,22 @@ export class MonitoresComponent implements OnInit {
     });
   }
 
-  irParaFormMonitor() {
-    this.router.navigate(["form-monitor"]);
+  irParaFormGabinete() {
+    this.router.navigate(["form-gabinete"]);
   }
 
   verMais(id: number) {
-    this.router.navigate(["ver-monitor/" + id]);
+    this.router.navigate(["ver-gabinete/" + id]);
   }
 
-  verHistorico(monitor: Monitor) {
-    this.router.navigate(["historico-monitor"]);
-    this.goToByServico(monitor);
+  verHistorico(gabinete: Gabinete) {
+    this.router.navigate(["historico-gabinete"]);
+    this.goToByServico(gabinete);
   }
 
-  goToByServico(monitor: Monitor) {
-    this.dataService.setDataAtivo(monitor);
-    this.dataService.setDataSeletorComponente("monitores");
+  goToByServico(gabinete: Gabinete) {
+    this.dataService.setDataAtivo(gabinete);
+    this.dataService.setDataSeletorComponente("gabinetes");
   }
 
 }

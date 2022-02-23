@@ -34,6 +34,10 @@ const TREE_DATA: Menu[] = [
         name: "MONITORES",
         link: "/monitores",
       },
+      {
+        name: "GABINETES",
+        link: "/gabinetes",
+      },
     ],
   },
   {

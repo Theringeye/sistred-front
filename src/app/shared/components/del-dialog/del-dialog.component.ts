@@ -9,6 +9,7 @@ import {
 } from "@angular/material/dialog";
 import { Router } from "@angular/router";
 import { DelCaboComponent } from "src/app/views/cabos/del-cabo/del-cabo.component";
+import { DelGabineteComponent } from "src/app/views/gabinetes/del-gabinete/del-gabinete.component";
 import { DelMonitorComponent } from "src/app/views/monitores/del-monitor/del-monitor.component";
 import { DelMouseComponent } from "src/app/views/mouses/del-mouse/del-mouse.component";
 import { DelTecladoComponent } from 'src/app/views/teclados/del-teclado/del-teclado.component';
@@ -31,6 +32,7 @@ export class DelDialogComponent implements OnInit {
     private tecladoComponente: DelTecladoComponent,
     private mouseComponente: DelMouseComponent,
     private monitorComponent: DelMonitorComponent,
+    private gabineteComponent: DelGabineteComponent
   ) {}
 
   sim(): void {
@@ -42,6 +44,8 @@ export class DelDialogComponent implements OnInit {
       this.monitorComponent.remover(this.data.ativo);
     } else if (this.data.nomeComponente == "mouses"){
       this.mouseComponente.remover(this.data.ativo);
+    } else if (this.data.nomeComponente == "gabinetes"){
+      this.gabineteComponent.remover(this.data.ativo)
     }
 
     this.recarregaComponente();

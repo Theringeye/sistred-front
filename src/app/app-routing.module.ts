@@ -1,6 +1,3 @@
-import { MousesModule } from './views/mouses/mouses.module';
-import { VerTecladoComponent } from './views/teclados/ver-teclado/ver-teclado.component';
-import { DelTecladoComponent } from './views/teclados/del-teclado/del-teclado.component';
 import { HistoricoCaboComponent } from './views/cabos/historico-cabo/historico-cabo.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -12,8 +9,6 @@ import { VerCaboComponent } from './views/cabos/ver-cabo/ver-cabo.component';
 import { FormAtivosComponent } from './views/forms/form-ativos/form-ativos.component';
 import { MovimentacoesComponent } from './views/movimentacoes/movimentacoes.component';
 import { PainelComponent } from './views/painel/painel.component';
-import { TecladosComponent } from './views/teclados/teclados.component';
-import { FormTecladoComponent } from './views/teclados/form-teclado/form-teclado.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'painel' },
@@ -65,6 +60,10 @@ const routes: Routes = [
   {
     path: 'monitores',
     loadChildren: () => import('./views/monitores/monitores.module').then((m) => m.MonitoresModule)
+  },
+  {
+    path: 'gabinetes',
+    loadChildren: () => import('./views/gabinetes/gabinetes.module').then((m) => m.GabinetesModule)
   }
   
 ];

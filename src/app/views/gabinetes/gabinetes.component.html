@@ -2,27 +2,24 @@
     <nav class="col-md-12">
       <ol class="breadcrumb">
         <li><a>Ativos</a></li>
-        <li>Monitores</li>
+        <li>Gabinetes</li>
       </ol>
     </nav>
   
     <div class="novo">
-      <button (click)="irParaFormMonitor()" mat-flat-button color="primary">
+      <button (click)="irParaFormGabinete()" mat-flat-button color="primary">
         Novo
       </button>
     </div>
     <mat-divider></mat-divider>
     <div class="lista">
-      <h2>Todos os Monitores</h2>
-      <!--
-              Lista de todos os teclados
-          -->
+      <h2>Todos os Gabinetes</h2>
       <mat-form-field appearance="standard">
         <mat-label>Filtro</mat-label>
         <input
           matInput
           (keyup)="filtro($event)"
-          placeholder="Ex: vga"
+          placeholder="Ex: core i5"
           #input
         />
       </mat-form-field>
@@ -31,38 +28,53 @@
         <table mat-table [dataSource]="dataSource" matSort>
           <ng-container matColumnDef="patrimonio">
             <th mat-header-cell *matHeaderCellDef>Patrimônio</th>
-            <td mat-cell *matCellDef="let monitor">{{ monitor.patrimonio}}</td>
+            <td mat-cell *matCellDef="let gabinete">{{ gabinete.patrimonio}}</td>
           </ng-container>     
-          <ng-container matColumnDef="modelo">
-            <th mat-header-cell *matHeaderCellDef>Modelo</th>
-            <td mat-cell *matCellDef="let monitor">{{ monitor.modelo }}</td>
-          </ng-container>     
-          <ng-container matColumnDef="fabricante">
-            <th mat-header-cell *matHeaderCellDef>Fabricante</th>
-            <td mat-cell *matCellDef="let monitor">{{ monitor.fabricante }}</td>
-          </ng-container>     
-          <ng-container matColumnDef="tamanho">
-            <th mat-header-cell *matHeaderCellDef>Tamanho</th>
-            <td mat-cell *matCellDef="let monitor">{{ monitor.tamanho }}</td>
+        
+        
+          <ng-container matColumnDef="processador">
+            <th mat-header-cell *matHeaderCellDef>Processador</th>
+            <td mat-cell *matCellDef="let gabinete">{{ gabinete.processador }}</td>
           </ng-container>        
+          <ng-container matColumnDef="memoria">
+            <th mat-header-cell *matHeaderCellDef>Memória</th>
+            <td mat-cell *matCellDef="let gabinete">{{ gabinete.memoria }}</td>
+          </ng-container>        
+          <ng-container matColumnDef="tipo_armazenamento">
+            <th mat-header-cell *matHeaderCellDef>Tipo Armaz.</th>
+            <td mat-cell *matCellDef="let gabinete">{{ gabinete.tipo_armazenamento }}</td>
+          </ng-container>        
+          <ng-container matColumnDef="tamanho_armazenamento">
+            <th mat-header-cell *matHeaderCellDef>Tamanho Armaz.</th>
+            <td mat-cell *matCellDef="let gabinete">{{ gabinete.tamanho_armazenamento }}</td>
+          </ng-container>   
+          <ng-container matColumnDef="sistema_operacional">
+            <th mat-header-cell *matHeaderCellDef>S.O</th>
+            <td mat-cell *matCellDef="let gabinete">{{ gabinete.sistema_operacional }}</td>
+          </ng-container>   
+          <ng-container matColumnDef="versao_sistema_operacional">
+            <th mat-header-cell *matHeaderCellDef>Versão S.O</th>
+            <td mat-cell *matCellDef="let gabinete">{{ gabinete.versao_sistema_operacional }}</td>
+          </ng-container>    
+        
   
           <ng-container matColumnDef="acoes">
             <th mat-header-cell *matHeaderCellDef>Ações</th>
-            <td mat-cell *matCellDef="let monitor">
+            <td mat-cell *matCellDef="let gabinete">
               <a
                 matTooltip="Editar"
                 [matTooltipPosition]="'below'"
-                aria-label="Editar monitor"
+                aria-label="Editar gabinete"
                 class="vermais"
-                (click)="verMais(monitor.id)"
+                (click)="verMais(gabinete.id)"
               >
                 <mat-icon>edit</mat-icon>
               </a>
               <a
                 matTooltip="Excluir"
                 [matTooltipPosition]="'below'"
-                aria-label="Excluir monitor"
-                (click)="openDialog(monitor)"
+                aria-label="Excluir gabinete"
+                (click)="openDialog(gabinete)"
               >
                 <mat-icon>delete_outline</mat-icon>
               </a>
@@ -70,9 +82,9 @@
               <a
                 matTooltip="Histórico"
                 [matTooltipPosition]="'below'"
-                aria-label="Historico monitor"
+                aria-label="Historico gabinete"
                 class="vermais"
-                (click)="verHistorico(monitor)"
+                (click)="verHistorico(gabinete)"
               >
                 <mat-icon>description</mat-icon>
               </a>
