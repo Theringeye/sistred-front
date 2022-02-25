@@ -1,3 +1,4 @@
+import { UnidadesOrgaosComponent } from './../../../views/unidadesorgaos/unidadesorgaos.component';
 import {
   Component,
   OnInit,
@@ -13,6 +14,7 @@ import { DelGabineteComponent } from "src/app/views/gabinetes/del-gabinete/del-g
 import { DelMonitorComponent } from "src/app/views/monitores/del-monitor/del-monitor.component";
 import { DelMouseComponent } from "src/app/views/mouses/del-mouse/del-mouse.component";
 import { DelTecladoComponent } from 'src/app/views/teclados/del-teclado/del-teclado.component';
+import { DelUnidadeorgaoComponent } from 'src/app/views/unidadesorgaos/del-unidadeorgao/del-unidadeorgao.component';
 
 
 @Component({
@@ -32,7 +34,8 @@ export class DelDialogComponent implements OnInit {
     private tecladoComponente: DelTecladoComponent,
     private mouseComponente: DelMouseComponent,
     private monitorComponent: DelMonitorComponent,
-    private gabineteComponent: DelGabineteComponent
+    private gabineteComponent: DelGabineteComponent,
+    private unidadesOrgaosComponent: DelUnidadeorgaoComponent
   ) {}
 
   sim(): void {
@@ -46,6 +49,8 @@ export class DelDialogComponent implements OnInit {
       this.mouseComponente.remover(this.data.ativo);
     } else if (this.data.nomeComponente == "gabinetes"){
       this.gabineteComponent.remover(this.data.ativo)
+    } else if (this.data.nomeComponente == "unidadesorgaos"){
+      this.unidadesOrgaosComponent.remover(this.data.ativo)
     }
 
     this.recarregaComponente();

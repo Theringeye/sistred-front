@@ -15,6 +15,16 @@ const TREE_DATA: Menu[] = [
     link: "/painel",
   },
   {
+    name: "ADMINISTRATIVO",
+    link: "",
+    children: [
+      {
+        name: "UNIDADE E ORGÃOS",
+        link: "/unidadesorgaos",
+      }
+    ]
+  },
+  {
     name: "ATIVOS",
     link: "",
     children: [

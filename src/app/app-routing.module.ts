@@ -64,6 +64,10 @@ const routes: Routes = [
   {
     path: 'gabinetes',
     loadChildren: () => import('./views/gabinetes/gabinetes.module').then((m) => m.GabinetesModule)
+  },
+  {
+    path: 'unidadesorgaos',
+    loadChildren: () => import('./views/unidadesorgaos/unidadesorgaos.module').then((m) => m.UnidadesOrgaosModule)
   }
   
 ];

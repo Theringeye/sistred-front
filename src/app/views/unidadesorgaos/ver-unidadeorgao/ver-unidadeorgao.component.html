@@ -1,0 +1,36 @@
+
+<nav class="col-md-12">
+    <ol class="breadcrumb">
+      <li > <a>Administrativo</a></li>
+      <li ><a> Unidades e Orgãos</a> </li>
+      <li >Alterar  Unidade e Orgão</li>
+    </ol>
+  </nav>
+
+<h1>Alterar  Unidade e Orgão</h1>
+<mat-divider></mat-divider>
+<br>
+    <mat-card>        
+        <mat-card-header>            
+        </mat-card-header>
+        <mat-card-content>          
+            <mat-form-field appearance="fill">
+                <mat-label>Nome</mat-label>
+                <input matInput [(ngModel)]="uo.nomeUnidade" placeholder="Informe o nome da Unidade e Orgão" >
+            </mat-form-field> 
+            <mat-form-field appearance="fill">
+                <mat-label>Sigla</mat-label>
+                <input matInput [(ngModel)]="uo.siglaUnidade" placeholder="Informe a sigla da Unidade e Orgão" >
+            </mat-form-field>   
+            <mat-form-field appearance="fill">
+                <mat-label>Telefone</mat-label>
+                <input matInput [(ngModel)]="uo.telefoneRamal" placeholder="Informe o telefone da Unidade e Orgão " >
+            </mat-form-field> 
+                      
+        </mat-card-content>
+        <mat-card-actions>
+            <button (click)="salvar()" mat-raised-button color="primary">Alterar</button>
+            <button (click)="voltar()" mat-raised-button color="warn">Cancelar</button>
+        </mat-card-actions>
+    
+    </mat-card>

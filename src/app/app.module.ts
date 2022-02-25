@@ -46,6 +46,7 @@ import {CheckboxModule} from 'primeng/checkbox'
 import {CalendarModule} from 'primeng/calendar';
 import { MonitoresModule } from './views/monitores/monitores.module';
 import { GabinetesModule } from './views/gabinetes/gabinetes.module';
+import { UnidadesOrgaosModule } from './views/unidadesorgaos/unidadesorgaos.module';
 
 
 
@@ -89,7 +90,8 @@ import { GabinetesModule } from './views/gabinetes/gabinetes.module';
     MousesModule,
     TecladosModule,
     MonitoresModule,
-    GabinetesModule
+    GabinetesModule,
+    UnidadesOrgaosModule
     
     
   ],
