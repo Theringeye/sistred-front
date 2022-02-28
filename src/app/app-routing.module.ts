@@ -68,6 +68,10 @@ const routes: Routes = [
   {
     path: 'unidadesorgaos',
     loadChildren: () => import('./views/unidadesorgaos/unidadesorgaos.module').then((m) => m.UnidadesOrgaosModule)
+  },
+  {
+    path: 'tecnicosadministrativos',
+    loadChildren: () => import('./views/tecnicosadministrativos/tecnicosadministrativos.module').then((m) => m.TecnicosAdministrativosModule)
   }
   
 ];

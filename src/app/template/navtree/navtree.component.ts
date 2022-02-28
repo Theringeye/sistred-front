@@ -21,6 +21,10 @@ const TREE_DATA: Menu[] = [
       {
         name: "UNIDADE E ORGÃOS",
         link: "/unidadesorgaos",
+      },
+      {
+        name: "TÉCNICOS ADMINISTRATIVOS",
+        link: "/tecnicosadministrativos",
       }
     ]
   },

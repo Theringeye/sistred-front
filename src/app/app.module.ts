@@ -47,6 +47,7 @@ import {CalendarModule} from 'primeng/calendar';
 import { MonitoresModule } from './views/monitores/monitores.module';
 import { GabinetesModule } from './views/gabinetes/gabinetes.module';
 import { UnidadesOrgaosModule } from './views/unidadesorgaos/unidadesorgaos.module';
+import { TecnicosAdministrativosModule } from './views/tecnicosadministrativos/tecnicosadministrativos.module';
 
 
 
@@ -91,7 +92,8 @@ import { UnidadesOrgaosModule } from './views/unidadesorgaos/unidadesorgaos.modu
     TecladosModule,
     MonitoresModule,
     GabinetesModule,
-    UnidadesOrgaosModule
+    UnidadesOrgaosModule,
+    TecnicosAdministrativosModule
     
     
   ],

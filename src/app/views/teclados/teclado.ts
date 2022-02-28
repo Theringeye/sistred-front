@@ -7,3 +7,4 @@ export class Teclado extends Common{
     listaHistoricoAtivoDTO?: Historico[];
 }
 
+export type Teclados = Array<Teclado>;
